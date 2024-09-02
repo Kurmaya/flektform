@@ -69,3 +69,9 @@
 .sub.active{
     display: block;
 }
+@media screen and (max-width:599px) {
+    .opts-hold img{
+width:100px;
+height: 100px;
+    }
+}
