@@ -59,6 +59,8 @@ but.addEventListener('click',()=>{
                 re();
                 break;
         default:
+            alert('unspecified result');
+            re();
             break;
     }
     
