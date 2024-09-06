@@ -177,29 +177,49 @@ questions[7].querySelector('input').addEventListener('change',(e)=>{
             })
     })
 const report = document.querySelector('.report');
-
+const reportDisplay = document.querySelector('.report-display');
+const prod = document.querySelector('.report-product'),
+serv = document.querySelector('.report-service');
 report.addEventListener('click',()=>{
 
    if(hairConcArr.length > 1 || scalpConcArr.length > 1 ){
     alert('Professional reborn service for dual benefit.');
+    reportDisplay.classList.add('active');
+    
    }
    else if(hairConcArr.includes('Dryness') || scalpConcArr.includes('Sensitive (Dryness/ Weakness / Rashes)')){
 alert('3Tenx Hydra Reviver');
+reportDisplay.classList.add('active');
+serv.textContent='Service Recommendation: \n 3Tenx ';
+prod.textContent='Product Recommendation: \n Hydra Revive';
    }
    else if(hairConcArr.includes('Damage')){
-    alert('Product Recommendation: Ultimate Revitalize');
+    // alert('Product Recommendation: Ultimate Revitalize');
+    reportDisplay.classList.add('active');
+    serv.textContent='Service Recommendation: \n 3TENX';
+    prod.textContent='Products Recommendation : \n Ultimate Revitalize';
+
    }
    else if(hairConcArr.includes('Dull/ Lack of Shine')){
     alert('Product Recommendation: Keratin Luxe');
    }
    else if(hairConcArr.includes('Breakage / Split Ends') && scalpConcArr.includes('Sensitive (Dryness/ Weakness / Rashes)')){
-    alert('Olaplex Intense Standalone service.');
+    // alert('Olaplex Intense Standalone service.');
+    reportDisplay.classList.add('active');
+    serv.textContent='Olaplex Intense Standalone service';
+    prod.textContent='Products Recommendation : \n Ultimate Revitalize';
    }
    else if(hairConcArr.includes('Fine/ Lack of volume') || scalpConcArr.includes('Hair Fall')){
     alert('Root deep service.');
+    reportDisplay.classList.add('active');
+    serv.textContent='Service Recommendation: \n Root deep';
+    prod.textContent=' Product Recommendation: \n '
    }
    else if(scalpConcArr.includes('Dandruff')){
     alert('Service Recommendation:Clear, \n'  + 'Product Recommendation: Clear');
+    reportDisplay.classList.add('active');
+    serv.textContent='Service Recommendation: \n SP';
+    prod.textContent='Product Recommendation: \n Clear';
    }
 
 })
