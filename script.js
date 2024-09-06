@@ -179,14 +179,18 @@ questions[7].querySelector('input').addEventListener('change',(e)=>{
 const report = document.querySelector('.report');
 
 report.addEventListener('click',()=>{
-   if(hairConcArr.length > 1 || scalpConcArr.length > 1   ){
+
+   if(hairConcArr.length > 1 || scalpConcArr.length > 1 ){
     alert('Professional reborn service for dual benefit.');
    }
-   else if(hairConcArr.includes('Dryness')){
+   else if(hairConcArr.includes('Dryness') || scalpConcArr.includes('Sensitive (Dryness/ Weakness / Rashes)')){
 alert('3Tenx Hydra Reviver');
    }
    else if(hairConcArr.includes('Damage')){
-    alert('Ultimate Revitalize');
+    alert('Product Recommendation: Ultimate Revitalize');
+   }
+   else if(hairConcArr.includes('Dull/ Lack of Shine')){
+    alert('Product Recommendation: Keratin Luxe');
    }
    else if(hairConcArr.includes('Breakage / Split Ends') && scalpConcArr.includes('Sensitive (Dryness/ Weakness / Rashes)')){
     alert('Olaplex Intense Standalone service.');
@@ -194,4 +198,58 @@ alert('3Tenx Hydra Reviver');
    else if(hairConcArr.includes('Fine/ Lack of volume') || scalpConcArr.includes('Hair Fall')){
     alert('Root deep service.');
    }
+   else if(scalpConcArr.includes('Dandruff')){
+    alert('Service Recommendation:Clear, \n'  + 'Product Recommendation: Clear');
+   }
+
+})
+
+let qCount = 0;
+
+const prev = document.querySelector('.prev'),
+next = document.querySelector('.next');
+
+next.addEventListener('click',()=>{
+    if(qCount > -1){
+        prev.classList.remove('hide');
+    }
+    if(qCount == questions.length-2){
+        document.querySelector('.report').classList.add('active');
+    }
+    
+    if(qCount >questions.length-3){
+        next.classList.add('hide');
+    }
+   if(qCount<questions.length-1){  
+    
+        qCount++
+    }
+    
+    questions.forEach(q=>{
+        q.classList.remove('active')
+    }
+        
+    )
+    questions[qCount].classList.add('active');
+})
+
+
+prev.addEventListener('click',()=>{
+    if(qCount>0){    
+        qCount--;
+        next.classList.remove('hide');
+    }  
+    if(qCount == 0){
+        prev.classList.add('hide');
+    }
+    if(qCount < questions.length-1){
+        document.querySelector('.report').classList.remove('active');
+    }
+    questions.forEach(q=>{
+        q.classList.remove('active')
+    }
+        
+    )
+    questions[qCount].classList.add('active');
+
 })

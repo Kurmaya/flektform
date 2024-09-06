@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+   
   
     <!-- <div class="test">
         <h2>QUESTION </h2>
@@ -277,7 +278,9 @@ Option C
     </div> -->
     
         <div class="new-form">
-            <div class="question1 question">
+            <div class="prev hide"> <i class="arrow left"></i> </div>
+            <div class="next"> <i class="arrow right"></i> </div>
+            <div class="question1 question active">
                 <h2>Are you doing a Hair Spa for the first time?</h2>
                 <label>
                     <input type="radio" name="Are you doing a Hair Spa for the first time?" id="" value="yes"> 
@@ -290,15 +293,15 @@ Option C
             </div>
             <div class="question2 question">
                 <h2>When did you do your last hair wash?</h2>
-            <input type="text" name="When did you do your last hair wash?" id="q2">
+            <input type="text" autocomplete="off" name="When did you do your last hair wash?" id="q2">
             </div>
             <div class="question3 question">
                 <h2>How frequently do you wash your hair?</h2>
-            <input type="text" name="How frequently do you wash your hair?" id="q3">
+            <input type="text" autocomplete="off" name="How frequently do you wash your hair?" id="q3">
             </div>
             <div class="question4 question">
                 <h2>What is your profession and lifestyle (doctor, teacher, sportsman, traveler, Homemaker etc)?</h2>
-            <input type="text" name="What is your profession and lifestyle " id="q4">
+            <input type="text" autocomplete="off" name="What is your profession and lifestyle " id="q4">
             </div>
             <div class="question5 question">
                 <h2>What do you like about your hair and scalp</h2>
@@ -426,7 +429,7 @@ Option C
             </div>
             <div class="question8 question">
                 <h2>What products are you currently using? Is it helping to address your hair and scalp concerns?</h2>
-                <input type="text" name="What products are you currently using? Is it helping to address your hair and scalp concerns?" id="">
+                <input type="text" autocomplete="off" name="What products are you currently using? Is it helping to address your hair and scalp concerns?" id="">
             </div>
             <div class="question9 question">
                 <h2>Are you using any heating tools like a dryer, iron machine, tongs, etc?</h2>
@@ -467,7 +470,7 @@ Option C
                     No
                 </label>
             </div>
-           <button class="report">Report</button>
+           
         </div>
         <form action="https://formsubmit.co/kurmaya.sid@gmail.com" method="POST">
         
@@ -488,6 +491,12 @@ Option C
         
         <button type="submit">Send</button>
     </form>
+    <button class="report">Report</button>
+    <nav>
+        <div class="logo">
+            <img src="./assets/BodycraftSpaAndSalonLogo.png" alt="">
+        </div>
+    </nav>
    <!-- <form action="https://formsubmit.co/kurmaya.sid@gmail.com" method="POST">
     <input type="text" name="name">
     <input type="email" name="email" >
