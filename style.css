@@ -257,10 +257,17 @@ button:nth-of-type(1){
 }
 @media screen and (max-width:400px) {
     h2{
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+    }
+    h3{
+        font-size: 1.4rem!important;
+    }
+    .new-form label{
+        font-size: 1.2rem!important;
     }
 .question.active{
     min-height:400px;
+    padding:1rem ;
 }
 .logo{
     height:70px;
