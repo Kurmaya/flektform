@@ -183,12 +183,13 @@ serv = document.querySelector('.report-service');
 report.addEventListener('click',()=>{
 
    if(hairConcArr.length > 1 || scalpConcArr.length > 1 ){
-    alert('Professional reborn service for dual benefit.');
+    // alert('Professional reborn service for dual benefit.');
     reportDisplay.classList.add('active');
+    serv.textContent='Professional Reborn Service';
     
    }
    else if(hairConcArr.includes('Dryness') || scalpConcArr.includes('Sensitive (Dryness/ Weakness / Rashes)')){
-alert('3Tenx Hydra Reviver');
+// alert('3Tenx Hydra Reviver');
 reportDisplay.classList.add('active');
 serv.textContent='Service Recommendation: \n 3Tenx ';
 prod.textContent='Product Recommendation: \n Hydra Revive';
@@ -201,7 +202,9 @@ prod.textContent='Product Recommendation: \n Hydra Revive';
 
    }
    else if(hairConcArr.includes('Dull/ Lack of Shine')){
-    alert('Product Recommendation: Keratin Luxe');
+    // alert('Product Recommendation: Keratin Luxe');
+    reportDisplay.classList.add('active');
+    prod.textContent='Product Recommendation: \n Keratin Luxe'
    }
    else if(hairConcArr.includes('Breakage / Split Ends') && scalpConcArr.includes('Sensitive (Dryness/ Weakness / Rashes)')){
     // alert('Olaplex Intense Standalone service.');
@@ -210,13 +213,13 @@ prod.textContent='Product Recommendation: \n Hydra Revive';
     prod.textContent='Products Recommendation : \n Ultimate Revitalize';
    }
    else if(hairConcArr.includes('Fine/ Lack of volume') || scalpConcArr.includes('Hair Fall')){
-    alert('Root deep service.');
+    // alert('Root deep service.');
     reportDisplay.classList.add('active');
     serv.textContent='Service Recommendation: \n Root deep';
-    prod.textContent=' Product Recommendation: \n '
+    prod.textContent=' Product Recommendation: \n Volupt'
    }
    else if(scalpConcArr.includes('Dandruff')){
-    alert('Service Recommendation:Clear, \n'  + 'Product Recommendation: Clear');
+    // alert('Service Recommendation:Clear, \n'  + 'Product Recommendation: Clear');
     reportDisplay.classList.add('active');
     serv.textContent='Service Recommendation: \n SP';
     prod.textContent='Product Recommendation: \n Clear';
@@ -272,4 +275,9 @@ prev.addEventListener('click',()=>{
     )
     questions[qCount].classList.add('active');
 
+})
+const fin = document.querySelector('.finish');
+
+fin.addEventListener('click',()=>{
+document.querySelector('form button').click();
 })
