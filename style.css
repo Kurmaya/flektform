@@ -131,7 +131,7 @@ button:nth-of-type(1){
     .logo{
         position:relative;
         width:120px;
-        height: 90px;
+        height: 120px;
         margin: auto;
 
     }
@@ -147,7 +147,7 @@ button:nth-of-type(1){
         display: inline-block;
         padding: 10px;
         position:absolute;
-        top:90%;
+        top:93%;
         z-index: 10;
         display: flex;
       }
@@ -182,6 +182,7 @@ button:nth-of-type(1){
     h2{
         font-size:1.7rem ;
         color:White;
+        margin-top:20px;
     }
     .opts-hold img{
     width:100px;
@@ -207,14 +208,14 @@ button:nth-of-type(1){
     }
     .question h3{
         font-size:1.5rem;
-        margin:20px;
+        margin:10px;
         /* text-align: left; */
     }
     .question.active{
         left:50%;
         transform: translateX(-50%);
         width:90%;
-        min-height:500px;
+        min-height:700px;
         max-height: 90%;
         /* margin:auto; */
     }
@@ -230,5 +231,16 @@ button:nth-of-type(1){
 }
 .report.active{
     display: block;
+}
+}
+@media screen and (max-width:400px) {
+    h2{
+        font-size: 1.8rem;
+    }
+.question.active{
+    min-height:400px;
+}
+.logo{
+    height:70px;
 }
 }
