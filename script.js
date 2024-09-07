@@ -179,7 +179,8 @@ questions[7].querySelector('input').addEventListener('change',(e)=>{
 const report = document.querySelector('.report');
 const reportDisplay = document.querySelector('.report-display');
 const prod = document.querySelector('.report-product'),
-serv = document.querySelector('.report-service');
+serv = document.querySelector('.report-service'),
+repImg = document.querySelector('.report-img img');
 report.addEventListener('click',()=>{
 
    if(hairConcArr.length > 1 || scalpConcArr.length > 1 ){
@@ -193,18 +194,22 @@ report.addEventListener('click',()=>{
 reportDisplay.classList.add('active');
 serv.textContent='Service Recommendation: \n 3Tenx ';
 prod.textContent='Product Recommendation: \n Hydra Revive';
+repImg.src='./assets/tenx-hydra-revive.webp';
+
    }
    else if(hairConcArr.includes('Damage')){
     // alert('Product Recommendation: Ultimate Revitalize');
     reportDisplay.classList.add('active');
     serv.textContent='Service Recommendation: \n 3TENX';
     prod.textContent='Products Recommendation : \n Ultimate Revitalize';
+    repImg.src='./assets/tenx-ultimate.webp';
 
    }
    else if(hairConcArr.includes('Dull/ Lack of Shine')){
     // alert('Product Recommendation: Keratin Luxe');
     reportDisplay.classList.add('active');
     prod.textContent='Product Recommendation: \n Keratin Luxe'
+    
    }
    else if(hairConcArr.includes('Breakage / Split Ends') && scalpConcArr.includes('Sensitive (Dryness/ Weakness / Rashes)')){
     // alert('Olaplex Intense Standalone service.');
@@ -217,14 +222,22 @@ prod.textContent='Product Recommendation: \n Hydra Revive';
     reportDisplay.classList.add('active');
     serv.textContent='Service Recommendation: \n Root deep';
     prod.textContent=' Product Recommendation: \n Volupt'
+    repImg.src='./assets/volupt.webp';
    }
    else if(scalpConcArr.includes('Dandruff')){
     // alert('Service Recommendation:Clear, \n'  + 'Product Recommendation: Clear');
     reportDisplay.classList.add('active');
     serv.textContent='Service Recommendation: \n SP';
     prod.textContent='Product Recommendation: \n Clear';
+    repImg.src='./assets/aminu.webp';
    }
-
+   else if(scalpConcArr.includes('Oily')){
+    // alert('Service Recommendation:Clear, \n'  + 'Product Recommendation: Clear');
+    reportDisplay.classList.add('active');
+    serv.textContent='Service Recommendation: \n SP';
+    prod.textContent='Product Recommendation: \n Clear';
+    repImg.src='./assets/aminu.webp';
+   }
 })
 
 let qCount = 0;

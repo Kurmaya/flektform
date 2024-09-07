@@ -4,10 +4,16 @@
     box-sizing: border-box;
 }
 body{
-    background: #c41f43;
+    
+    /* background: linear-gradient(#B91F41 ,#E82D56 , #f09eb0); */
+    background-color: #e82d56;
     font-family: sans-serif;
 }
-
+/* .page{
+    background: linear-gradient(#B91F41 ,#E82D56 , #f09eb0);
+    height: 100%;
+    width: 100%;
+} */
 .form-holder{
     width:100%;
     height: 100%;
@@ -75,6 +81,9 @@ body{
 .sub.active{
     display: block;
 }
+.new-form{
+    /* background: linear-gradient(#B91F41 ,#E82D56); */
+}
 .new-form label{
     font-size: 1.2rem;
     font-weight: 500;
@@ -137,18 +146,20 @@ button:nth-of-type(1){
     z-index: 20;
     /* top:0;
     left:0; */
-    background: black;
+    background:#e82d56;
     opacity: 1;
     color:white!important;
 }
 .finish{
 
 }
-@media screen and (max-width:599px) {
+@media screen and (min-width:599px) and (max-width:1100px) {
     nav{
         position: fixed;
         bottom:0;
         width:100%;
+        /* background-color: #e05b78; */
+        background: linear-gradient(#e82d56 1%,#e05b78);
     }
     .logo{
         position:relative;
@@ -169,7 +180,7 @@ button:nth-of-type(1){
         display: inline-block;
         padding: 10px;
         position:absolute;
-        top:95%;
+        top:93%;
         z-index: 10;
         display: flex;
       }
@@ -219,7 +230,8 @@ button:nth-of-type(1){
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        background: #c41f43;
+        /* background: #c41f43; */
+        /* background: linear-gradient(#B91F41 ,#E82D56 , #f09eb0); */
         color:white;
         position:absolute;
         left:-150%;
@@ -254,6 +266,17 @@ button:nth-of-type(1){
 .report.active{
     display: block;
 }
+.report-img{
+    width:300px;
+    height:300px;
+    position: relative;
+}
+.report-img img{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    object-fit: contain;
+}
 }
 @media screen and (max-width:400px) {
     h2{
@@ -271,5 +294,10 @@ button:nth-of-type(1){
 }
 .logo{
     height:70px;
+}
+.report-display h3{
+    width:80%;
+    text-align: center;
+    line-height: 2;
 }
 }
