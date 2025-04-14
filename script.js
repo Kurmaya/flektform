@@ -183,12 +183,19 @@ serv = document.querySelector('.report-service'),
 repImg = document.querySelector('.report-img img');
 report.addEventListener('click',()=>{
 
-   if(hairConcArr.length > 1 || scalpConcArr.length > 1 ){
+   if(hairConcArr.length > 1 && scalpConcArr.length > 1 ){
     // alert('Professional reborn service for dual benefit.');
     reportDisplay.classList.add('active');
     serv.textContent='Professional Reborn Service';
     
    }
+   else if(hairConcArr.includes('Breakage / Split Ends') && scalpConcArr.includes('Sensitive (Dryness/ Weakness / Rashes)')){
+    // alert('Olaplex Intense Standalone service.');
+    reportDisplay.classList.add('active');
+    serv.textContent='Olaplex Intense Standalone service';
+    prod.textContent='Products Recommendation : \n Ultimate Revitalize';
+   }
+   
    else if(hairConcArr.includes('Dryness') || scalpConcArr.includes('Sensitive (Dryness/ Weakness / Rashes)')){
 // alert('3Tenx Hydra Reviver');
 reportDisplay.classList.add('active');
@@ -211,13 +218,8 @@ repImg.src='./assets/tenx-hydra-revive.webp';
     prod.textContent='Product Recommendation: \n Keratin Luxe'
     
    }
-   else if(hairConcArr.includes('Breakage / Split Ends') && scalpConcArr.includes('Sensitive (Dryness/ Weakness / Rashes)')){
-    // alert('Olaplex Intense Standalone service.');
-    reportDisplay.classList.add('active');
-    serv.textContent='Olaplex Intense Standalone service';
-    prod.textContent='Products Recommendation : \n Ultimate Revitalize';
-   }
-   else if(hairConcArr.includes('Fine/ Lack of volume') || scalpConcArr.includes('Hair Fall')){
+
+   else if(hairConcArr.includes('Fine/ Lack of volume') && scalpConcArr.includes('Hair Fall')){
     // alert('Root deep service.');
     reportDisplay.classList.add('active');
     serv.textContent='Service Recommendation: \n Root deep';
