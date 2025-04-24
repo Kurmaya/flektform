@@ -2,332 +2,296 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Form</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Bodycraft Form</title>
 </head>
 <body>
-   
-  <div class="page">
-    <!-- <div class="test">
-        <h2>QUESTION </h2>
-        <div class="opts-hold one">
-            
-            <div class="opt" id="a">
-<img src="" alt="">
-Option A
+    <div class="logo">
+        <img src="./assets/bodycraft-logo-white.png" alt="">
+    </div>
+    <div id="wrapper">
+        <div class="question-holder">
+            <div class="question">
+                <h2>What is your gender?</h2>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="What is your gender?" id="" value="Male" class="gender"> Male</label>
+                        <label >
+        <input type="radio" name="What is your gender?" id="" value="Female" class="gender">Female </label>
+                </div>
+                 
+
             </div>
-            <div class="opt" id="b">
-                <img src="" alt="">
-                Option B
-            </div>
-            <div class="opt" id="c">
-<img src="" alt="">
-Option C
-            </div>
-        </div>
-        <div class="opts-hold two">
-            
-            <div class="opt" id="a" store="a">
-<img src="" alt="">
-Option A
-            </div>
-            <div class="opt" id="b"store="b">
-                <img src="" alt="">
-                Option B
-            </div>
-            <div class="opt" id="c"store="c">
-<img src="" alt="">
-Option C
-            </div>
-        </div>
-        <div class="opts-hold three">
-            
-            <div class="opt" id="a" store="a">
-<img src="" alt="">
-Option A
-            </div>
-            <div class="opt" id="b" store="b">
-                <img src="" alt="">
-                Option B
-            </div>
-            <div class="opt" id="c" store="c">
-<img src="" alt="">
-Option C
-            </div>
-        </div>
-        <div class="opts-hold three">
-            
-            <div class="opt" id="a" store="a">
-<img src="" alt="">
-Option A
-            </div>
-            <div class="opt" id="b" store="b">
-                <img src="" alt="">
-                Option B
-            </div>
-            <div class="opt" id="c" store="c">
-<img src="" alt="">
-Option C
-            </div>
-        </div>
-        <div class="opts-hold three">
-            
-            <div class="opt" id="a" store="a">
-<img src="" alt="">
-Option A
-            </div>
-            <div class="opt" id="b" store="b">
-                <img src="" alt="">
-                Option B
-            </div>
-            <div class="opt" id="c" store="c">
-<img src="" alt="">
-Option C
-            </div>
-            
-        </div>
-        <button class="sub">Submit</button>
-        <h3 class="disp">Nothing</h3>
-    </div> -->
-   
-    
-        <div class="new-form">
-            <div class="prev hide"> <i class="arrow left"></i> </div>
-            <div class="next"> <i class="arrow right"></i> </div>
-            <div class="question1 question active">
+            <div class="question">
                 <h2>Are you doing a Hair Spa for the first time?</h2>
-                <label>
-                    <input type="radio" name="Are you doing a Hair Spa for the first time?" id="" value="yes"> 
-                    yes
-                </label>
-                <label >
-                    <input type="radio" name="Are you doing a Hair Spa for the first time?" id="" value="no"> 
-                    no
-                </label>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="Are you doing a Hair Spa for the first time?" id="" value="yes"> 
+                        yes
+                    </label>
+                    <label >
+                        <input type="radio" name="Are you doing a Hair Spa for the first time?" id="" value="no"> 
+                        no
+                    </label>
+                </div>
+                
             </div>
-            <div class="question2 question">
+            <div class="question">
                 <h2>When did you do your last hair wash?</h2>
-            <input type="text" autocomplete="off" name="When did you do your last hair wash?" id="q2">
+           <div class="options">
+            <label for="Less than 2 days">
+                <input type="radio" name="Less than 2 days" id="" value="Less than 2 days">
+                Less than 2 days ago
+            </label>
+            <label for="Less than a week ago">
+                <input type="radio" name="Less than a week ago" id="" value="Less than a week ago">
+                Less than a week ago
+            </label>
+           </div>
             </div>
-            <div class="question3 question">
+        </div>
+        <div class="question-holder hide">
+            <div class="question">
                 <h2>How frequently do you wash your hair?</h2>
-            <input type="text" autocomplete="off" name="How frequently do you wash your hair?" id="q3">
+                <div class="options">
+                    <label for="Twice a week">
+                        <input type="radio" name="Twice a week" id="" value="Twice a week">
+                        Twice a week
+                    </label>
+                    <label for="More than Twice a Week">
+                        <input type="radio" name="More than Twice a Week" id="" value="More than Twice a Week">
+                        More than Twice a Week
+                    </label>
+                </div>
+                
             </div>
-            <div class="question4 question">
-                <h2>What is your profession and lifestyle (doctor, teacher, sportsman, traveler, Homemaker etc)?</h2>
-            <input type="text" autocomplete="off" name="What is your profession and lifestyle " id="q4">
-            </div>
-            <div class="question5 question">
+            <div class="question">
                 <h2>What do you like about your hair and scalp</h2>
                 
                     <h3>HAIR</h3><br>
+                <div class="options">
+                    <label>
+                        <input value="Length" type="checkbox" name="What do you like about your hair " id="" class="hairLike"> 
+                        Length
+                    </label>
+                    <label >
+                        <input value="Volume" type="checkbox" name="What do you like about your hair " id="" class="hairLike"> 
+                        Volume
+                    </label>
+                    <label >
+                        <input value="Thickness" type="checkbox" name="What do you like about your hair " id="" class="hairLike"> 
+                        Thickness
+                    </label>
+                    <label >
+                        <input value="Smoothness" type="checkbox" name="What do you like about your hair " id="" class="hairLike"> 
+                        Smoothness
+                    </label>
+                    <label >
+                        <input value="Curls" type="checkbox" name="What do you like about your hair " id="" class="hairLike"> 
+                        Curls
+                    </label>
+                    <label >
+                        <input value="Movement" type="checkbox" name="What do you like about your hair " id="" class="hairLike"> 
+                        Movement
+                    </label>
+                    <label >
+                        <input value="Color" type="checkbox" name="What do you like about your hair " id="" class="hairLike"> 
+                        Color
+                    </label>
+                    <label >
+                        <input value="Shine" type="checkbox" name="What do you like about your hair " id="" class="hairLike"> 
+                        Shine
+                    </label>
+                    <label >
+                        <input value="Easy to Style" type="checkbox" name="What do you like about your hair " id="" class="hairLike"> 
+                        Easy to style
+                    </label>
+                </div>
                 
-                <label>
-                    <input value="Length" type="checkbox" name="What do you like about your hair " id="" class="hairLike"> 
-                    Length
-                </label>
-                <label >
-                    <input value="Volume" type="checkbox" name="What do you like about your hair " id="" class="hairLike"> 
-                    Volume
-                </label>
-                <label >
-                    <input value="Thickness" type="checkbox" name="What do you like about your hair " id="" class="hairLike"> 
-                    Thickness
-                </label>
-                <label >
-                    <input value="Smoothness" type="checkbox" name="What do you like about your hair " id="" class="hairLike"> 
-                    Smoothness
-                </label>
-                <label >
-                    <input value="Curls" type="checkbox" name="What do you like about your hair " id="" class="hairLike"> 
-                    Curls
-                </label>
-                <label >
-                    <input value="Movement" type="checkbox" name="What do you like about your hair " id="" class="hairLike"> 
-                    Movement
-                </label>
-                <label >
-                    <input value="Color" type="checkbox" name="What do you like about your hair " id="" class="hairLike"> 
-                    Color
-                </label>
-                <label >
-                    <input value="Shine" type="checkbox" name="What do you like about your hair " id="" class="hairLike"> 
-                    Shine
-                </label>
-                <label >
-                    <input value="Easy to Style" type="checkbox" name="What do you like about your hair " id="" class="hairLike"> 
-                    Easy to style
-                </label>
             <h3>SCALP</h3>
-            <label >
-                <input value="Normal" type="checkbox" name="What do you like about your scalp " id="" class="scalpLike"> 
-                Normal
-            </label>
-            <label >
-                <input value="Balanced" type="checkbox" name="What do you like about your scalp " id="" class="scalpLike"> 
-                Balanced
-            </label>
-            <label >
-                <input value="Calm and Free of Irritation" type="checkbox" name="What do you like about your scalp " id="" class="scalpLike"> 
-                Calm & Free of Irritation
-            </label>
-            <label >
-                <input value="Roots feel Healthy and strong" type="checkbox" name="What do you like about your scalp " id="" class="scalpLike"> 
-                Roots feel Healthy & strong
-            </label>
-            
-            </div>
-            <div class="question question6">
-                <h2>What do you dislike (Concern) about your hair and scalp -</h2>
-    
-                <h3>HAIR</h3>
-                <label>
-                    <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Dryness" class="hairCa"> 
-                    Dryness
-                </label>
-                <label>
-                    <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Breakage / Split Ends" class="hairCa"> 
-                    Breakage / Split Ends
-                </label>
-                <label>
-                    <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Damage" class="hairCa"> 
-                    Damage
-                </label>
-                <label>
-                    <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Fine/ Lack of volume" class="hairCa"> 
-                    Fine/ Lack of volume
-                </label>
-                <label>
-                    <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Frizzy/ Unmanageable" class="hairCa"> 
-                    Frizzy/ Unmanageable
-                </label>
-                <label>
-                    <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Dull/ Lack of Shine" class="hairCa"> 
-                    Dull/ Lack of Shine
-                </label>
-                <label>
-                    <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Color Fadage" class="hairCa"> 
-                    Color Fadage
-                </label>
-                <!-- <input type="text" name="concerns in hair" id="hairconc" > -->
-                <h3>SCALP</h3>
-                <label>
-                    <input type="checkbox" name="What do you dislike (Concern) about your scalp" id="" value="Sensitive (Dryness/ Weakness / Rashes)" class="scalpCa"> 
-                    Sensitive (Dryness/ Weakness / Rashes)
-                </label>
-                <label>
-                    <input type="checkbox" name="What do you dislike (Concern) about your scalp" id="" value="Hair Fall" class="scalpCa"> 
-                    Hair Fall
-                </label>
-                <label>
-                    <input type="checkbox" name="What do you dislike (Concern) about your scalp" id="" value="Oily" class="scalpCa"> 
-                    Oily
-                </label>
-                <label>
-                    <input type="checkbox" name="What do you dislike (Concern) about your scalp" id="" value="Dandruff" class="scalpCa"> 
-                    Dandruff
-                </label>
-    
-            </div>
-            <div class="question7 question">
-                <h2>Have you done any chemical services recently or in the past like color, smoothening, keratin etc?</h2>
-                <label>
-                    <input type="radio" name="Have you done any chemical services recently or in the past like color, smoothening, keratin etc?" id="" value="Yes"> 
-                    yes
+            <div class="options">
+                <label >
+                    <input value="Normal" type="checkbox" name="What do you like about your scalp " id="" class="scalpLike"> 
+                    Normal
                 </label>
                 <label >
-                    <input type="radio" name="Have you done any chemical services recently or in the past like color, smoothening, keratin etc?" id="" value="No"> 
-                    no
+                    <input value="Balanced" type="checkbox" name="What do you like about your scalp " id="" class="scalpLike"> 
+                    Balanced
                 </label>
-    
-            </div>
-            <div class="question8 question">
-                <h2>What products are you currently using? Is it helping to address your hair and scalp concerns?</h2>
-                <input type="text" autocomplete="off" name="What products are you currently using? Is it helping to address your hair and scalp concerns?" id="">
-            </div>
-            <div class="question9 question">
-                <h2>Are you using any heating tools like a dryer, iron machine, tongs, etc?</h2>
-                <label>
-                    
-                    <input type="radio" name="Are you using any heating tools like a dryer, iron machine, tongs, etc?" id="" value="Yes">
-                    Yes
+                <label >
+                    <input value="Calm and Free of Irritation" type="checkbox" name="What do you like about your scalp " id="" class="scalpLike"> 
+                    Calm & Free of Irritation
                 </label>
-                <label>
-                    
-                    <input type="radio" name="Are you using any heating tools like a dryer, iron machine, tongs, etc?" id="" value="No">
-                    No
-                </label>
-            </div>
-            <div class="question10 question">
-                <h2>Is the water used to rinse your hair Hard or soft?</h2>
-                <label>
-                    
-                    <input type="radio" name="Is the water used to rinse your hair Hard or soft?" id="" value="Hard">
-                    Hard
-                </label>
-                <label>
-                    
-                    <input type="radio" name="Is the water used to rinse your hair Hard or soft?" id="" value="Soft">
-                    Soft
-                </label>
-            </div>
-            <div class="question11 question">
-                <h2>Have you gone through any head surgery?</h2>
-                <label>
-                    
-                    <input type="radio" name="Have you gone through any head surgery?" id="" value="Yes">
-                    Yes
-                </label>
-                <label>
-                    
-                    <input type="radio" name="Have you gone through any head surgery?" id="" value="No">
-                    No
+                <label >
+                    <input value="Roots feel Healthy and strong" type="checkbox" name="What do you like about your scalp " id="" class="scalpLike"> 
+                    Roots feel Healthy & strong
                 </label>
             </div>
            
+            
+            </div>
+            <!-- <div class="question">
+                <h2>What do you dislike (Concern) about your hair and scalp -</h2>
+                <h3>HAIR</h3>
+                <div class="options">
+                    <label>
+                        <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Dryness" class="hairCa"> 
+                        Dryness
+                    </label>
+                    <label>
+                        <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Breakage / Split Ends" class="hairCa"> 
+                        Breakage / Split Ends
+                    </label>
+                    <label>
+                        <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Environment Damage (Like sun bleach)" class="hairCa"> 
+                        Environment Damage (Like sun bleach)
+                    </label>
+                    <label>
+                        <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Mechanical Damage (Ironing, tonging)" class="hairCa"> 
+                        Mechanical Damage (Ironing, tonging)
+                    </label>
+                    <label>
+                        <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Chemical Damaged Hair (Permanent Smoothening, Over bleached hair)" class="hairCa" data-prod=""> 
+                        Chemical Damaged Hair (Permanent Smoothening, Over bleached hair)
+                    </label>
+                    <label>
+                        <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Fine/ Lack of volume" class="hairCa" data-prod="VOLUPT"> 
+                        Fine/ Lack of volume
+                    </label>
+                    <label>
+                        <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Frizzy/ Unmanageable" class="hairCa"> 
+                        Frizzy/ Unmanageable
+                    </label>
+                    <label>
+                        <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Dull/ Lack of Shine" class="hairCa" data-prod="HYDRA REVIVE"> 
+                        Dull/ Lack of Shine
+                    </label>
+                    <label>
+                        <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Color Fadage" class="hairCa" data-prod="COLOR SAVE"> 
+                        Color Fadage
+                    </label>
+                </div>
+                    <h3>SCALP</h3>
+                    <div class="options">
+                        <label>
+                            <input type="checkbox" name="What do you dislike (Concern) about your scalp" id="" value="Sensitive (Dryness/ Weakness / Rashes)" class="scalpCa"> 
+                            Sensitive (Dryness/ Weakness / Rashes)
+                        </label>
+                        <label>
+                            <input type="checkbox" name="What do you dislike (Concern) about your scalp" id="" value="Hair Fall" class="scalpCa"> 
+                            Hair Fall
+                        </label>
+                        <label>
+                            <input type="checkbox" name="What do you dislike (Concern) about your scalp" id="" value="Oily" class="scalpCa"> 
+                            Oily
+                        </label>
+                        <label>
+                            <input type="checkbox" name="What do you dislike (Concern) about your scalp" id="" value="Dandruff" class="scalpCa"> 
+                            Dandruff
+                        </label>
+                    </div>
+                
+            </div> -->
         </div>
-        <form action="https://formsubmit.co/kurmaya.sid@gmail.com" method="POST">
-        
-         <input type="text" name="Are you doing a Hair Spa for the first time?"  class="q1">
-         <input type="text" name="When did you do your last hair wash?"  class="q2">
-         <input type="text" name="How frequently do you wash your hair?"  class="q3">
-         <input type="text" name="What is your profession and lifestyle?"  class="q4">
-         <input type="text" name="What do you like about your Hair?"  class="q5a">
-         <input type="text" name="What do you like about your Scalp?"  class="q5b">
-         <input type="text" name="What do you dislike (Concern) about your Hair?"  class="q6a">
-         <input type="text" name="What do you dislike (Concern) about your Scalp?"  class="q6b">
-         <input type="text" name="Have you done any chemical services recently or in the past like color, smoothening, keratin etc?" class="q7">
-         <input type="text" name="What products are you currently using? Is it helping to address your hair and scalp concerns?" class="q8">
-         <input type="text" name="Are you using any heating tools like a dryer, iron machine, tongs, etc?"  class="q9">
-         <input type="text" name="Is the water used to rinse your hair Hard or soft?"  class="q10">
-         <input type="text" name="Have you gone through any head surgery?"  class="q11">
-         
-        
-        <button type="submit">Send</button>
-    </form>
-    <button class="report">Report</button>
-    <nav>
-        <div class="logo">
-            <img src="./assets/bodycraft-logo-white.png" alt="">
+        <div class="question-holder hide">
+            <div class="question">
+                <h2>What do you dislike (Concern) about your hair and scalp -</h2>
+                <h3>HAIR</h3>
+                <div class="options">
+                    <label>
+                        <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Dryness" class="hairCa" data-prod="SP HYDRATE , 3tenx HYDRA REVIVE , SB HYDRE " data-img="./assets/images/compressed/sp hydrate cond.jpg"> 
+                        Dryness
+                    </label>
+                    <label>
+                        <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Breakage / Split Ends" class="hairCa" data-prod="SP REPAIR , Olaplex , 3tenx ULTIMATE REVITALIZE , SB PENETRAITT " data-img="./assets/images/compressed/sp repair shampoo.jpg"> 
+                        Breakage / Split Ends
+                    </label>
+                    <label>
+                        <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Environment Damage (Like sun bleach)" class="hairCa" data-prod="SP REPAIR , Olaplex , 3tenx ULTIMATE REVITALIZE , SB PENETRAITT " data-img="./assets/images/compressed/olapex 10.jpg"> 
+                        Environment Damage (Like sun bleach)
+                    </label>
+                    <label>
+                        <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Mechanical Damage (Ironing, tonging)" class="hairCa" data-prod="SP REPAIR , Olaplex , 3tenx ULTIMATE REVITALIZE , SB PENETRAITT " data-img="./assets/images/compressed/3tenx ulti rev hair mask.jpg"> 
+                        Mechanical Damage (Ironing, tonging)
+                    </label>
+                    <label>
+                        <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Chemical Damaged Hair (Permanent Smoothening, Over bleached hair)" class="hairCa" data-prod="SP REPAIR , Olaplex , 3tenx ULTIMATE REVITALIZE , SB PENETRAITT " data-img="./assets/images/compressed/olapex 9.jpg"> 
+                        Chemical Damaged Hair (Permanent Smoothening, Over bleached hair)
+                    </label>
+                    <label>
+                        <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Fine/ Lack of volume" class="hairCa" data-prod="SB VOLUPT " data-img="./assets/images/compressed/sb volupt shampoo.jpg"> 
+                        Fine/ Lack of volume
+                    </label>
+                    <label>
+                        <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Frizzy/ Unmanageable" class="hairCa" data-prods="SP SMOOTHEN , 3tenx HYDRA REVIVE , SB PENETRAITT , FMC Protein powered deep /  Moisture Melt Deep " data-img="./assets/images/compressed/sp smoothen shampoo.jpg"> 
+                        Frizzy/ Unmanageable
+                    </label>
+                    <label>
+                        <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Dull/ Lack of Shine" class="hairCa" data-prod="SP KERATIN LUXE , 3tenx HYDRA REVIVE " data-img="./assets/images/compressed/sp LUXE.jpg"> 
+                        Dull/ Lack of Shine
+                    </label>
+                    <label>
+                        <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Color Fadage" class="hairCa" data-prod="SP COLOR SAVE " data-img="./assets/images/compressed/sp color save shampoo.jpg"> 
+                        Color Fadage
+                    </label>
+                </div>
+                    <h3>SCALP</h3>
+                    <div class="options">
+                        <label>
+                            <input type="checkbox" name="What do you dislike (Concern) about your scalp" id="" value="Sensitive (Dryness/ Weakness / Rashes)" class="scalpCa" data-prod="SP BALANCE " data-img="./assets/images/compressed/sp balance elix.jpg"> 
+                            Sensitive (Dryness/ Weakness / Rashes)
+                        </label>
+                        <label>
+                            <input type="checkbox" name="What do you dislike (Concern) about your scalp" id="" value="Hair Fall" class="scalpCa" data-prod="SP BALANCE " data-img="./assets/images/compressed/sp balance elix.jpg"> 
+                            Hair Fall
+                        </label>
+                        <label>
+                            <input type="checkbox" name="What do you dislike (Concern) about your scalp" id="" value="Oily" class="scalpCa" data-prod="SP PURIFY " data-img="./assets/images/compressed/sp purify shampoo.jpg"> 
+                            Oily
+                        </label>
+                        <label>
+                            <input type="checkbox" name="What do you dislike (Concern) about your scalp" id="" value="Dandruff" class="scalpCa" data-prod="SP PURIFY " data-img="./assets/images/compressed/sp purify shampoo.jpg"> 
+                            Dandruff
+                        </label>
+                    </div>
+                
+            </div>
         </div>
-    </nav>
-    <div class="report-display">
-        
-        <h3 class="report-service"></h3>
-        <div class="report-img">
-            <img src="" alt="">
+        <div class="result">
+            <h2>Report</h2>
+            <div class="products">
+                <h2>Product Recommendation </h2>
+                <span><h3 class="hairProd"></h3></span>
+                <div class="img-holder hair">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                </div>
+              
+
+<h3></h3>
+            </div>
+            <div class="service">
+                <h2>Service Recommendation: </h2>
+                <span >Hair Reccomendation: <h3 class="hairRec"></h3></span>
+                <span >Scalp Reccomendation: <h3 class="scalpRec"></h3></span>
+                            </div>
+                            <button class="done">Submit</button>
         </div>
-        <h3 class="report-product"></h3>
-        <button class="finish">Finish</button>
-        
+        <button class="report hide">Report</button>
+       
     </div>
-   <!-- <form action="https://formsubmit.co/kurmaya.sid@gmail.com" method="POST">
-    <input type="text" name="name">
-    <input type="email" name="email" >
-    <button type="submit">Send</button>
-</form> -->
-</div>
-    <script src="script.js"></script>
+    <div class="prev hide"> <i class="arrow left"></i> </div>
+    <div class="next"> <i class="arrow right"></i> </div>
+    <script src="./script.js"></script>
 </body>
 </html>
