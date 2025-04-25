@@ -2,11 +2,16 @@ const holders= document.querySelectorAll('.question-holder');
 const prev = document.querySelector('.prev'), next = document.querySelector('.next');
 const report = document.querySelector('.report');
 const result = document.querySelector('.result');
-const scalpServ = document.querySelector('.scalpRec');
+// const scalpServ = document.querySelector('.scalpRec');
 const hairServ =document.querySelector('.hairRec');
 const prodsRec = document.querySelector('.hairProd');
 const genderOptions = document.querySelectorAll('.gender');
 const prodsImages = document.querySelectorAll('.products img');
+const prodsNames = document.querySelectorAll('.prod-name');
+const prodsPrice = document.querySelectorAll('.prod-price');
+const concernOptions = document.querySelectorAll('.concern-select');
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+const radios = document.querySelectorAll('input[type="radio"]');
 let scalpCon = [];
 let hairCon = [];
 let prodsArr = [];
@@ -14,8 +19,55 @@ let gender = '';
 // let scalpServ ='', hairServ='';
 let prods = '';
 let hairProds = '', scalpProds= '';
+let prodsImagesArr= [];
+let prodsNameArr = [];
+let prodsPriceArr = [];
 
+//concern selection 
+concernOptions.forEach(c=>{
+    c.addEventListener('click',()=>{
+        if(c.checked){
+            switch (c.value) {
+                case 'Hair':
+                    document.querySelectorAll('.hair-opts').forEach(s=>{
+                        s.classList.remove('hide');
+                    });
+                    document.querySelectorAll('.scalp-opts').forEach(s=>{
+                        s.classList.add('hide');
+                    });
+                    break;
+            case 'Scalp':
+                document.querySelectorAll('.hair-opts').forEach(s=>{
+                    s.classList.add('hide');
+                    document.querySelectorAll('.scalp-opts').forEach(s=>{
+                        s.classList.remove('hide');
+                    });
+                });
+                break;
+                case 'Both(Hair & Scalp)':
+                    document.querySelectorAll('.scalp-opts').forEach(s=>{
+                        s.classList.remove('hide');
+                    });
+                    document.querySelectorAll('.hair-opts').forEach(s=>{
+                        s.classList.remove('hide');
+                    });
+                break;
+            
+                default:
+                    break;
+            }
+        }
+        
+    })
+})
 
+//checkbox press handling
+checkboxes.forEach(box=>{
+    box.addEventListener('change',()=>{
+        
+        box.parentElement.classList.toggle('active');
+    })
+})
 
 //gender handling
 genderOptions.forEach(g=>{
@@ -23,6 +75,8 @@ genderOptions.forEach(g=>{
 gender=g.value
     })
 })
+
+
 
 const hair = document.querySelectorAll('.hairCa') , scalp = document.querySelectorAll('.scalpCa');
 hair.forEach(h=>{
@@ -32,16 +86,55 @@ hair.forEach(h=>{
             var newArray = hairCon.filter(n=> n != h.value)
             hairCon= [];
             hairCon=[...newArray];
+
+            
             
         }
         else if(h.checked){
             hairCon.push(h.value);
+            
             if(h.value.includes('Environment Damage (Like sun bleach)'|| 'Mechanical Damage (Ironing, tonging)' || 'Chemical Damaged Hair (Permanent Smoothening, Over bleached hair)'|| 'Breakage / Split Ends') ){
-                hairProds = hairProds += ' ' + 'SP REPAIR , 3tenx ULTIMATE REVITALIZE , SB PENETRAITT ';
+                // hairProds = hairProds += ' ' + 'SP REPAIR , 3tenx ULTIMATE REVITALIZE , SB PENETRAITT ';
+                // hairProds +=  h.attributes[5].value;
+                prodsArr.push(h.attributes[6].value);
+                JSON.parse(h.attributes[6].value).forEach(at=>{
+                    if(prodsImagesArr.includes(at)){
+                        
+                        prodsImagesArr.pop(at);
+                    }
+                    // console.log(b);
+                    
+                })
+                JSON.parse(h.attributes[8].value).forEach(at=>{
+                    if(prodsNameArr.includes(at)){
+                        
+                        prodsNameArr.pop(at);
+                    }
+                    // console.log(b);
+                    
+                })
+                
             }else{
-                hairProds +=  h.attributes[5].value;
+                // hairProds +=  h.attributes[5].value;
                 prodsArr.push(h.attributes[6].value);
                 
+                JSON.parse(h.attributes[6].value).forEach(at=>{
+                    if(!prodsImagesArr.includes(at)){
+                        
+                        prodsImagesArr.push(at);
+                    }
+                    // console.log(b);
+                    
+                })
+                JSON.parse(h.attributes[8].value).forEach(at=>{
+                    if(!prodsNameArr.includes(at)){
+                        
+                        prodsNameArr.push(at);
+                    }
+                    // console.log(b);
+                    
+                })
+                console.log(prodsImagesArr);
             }
             console.log(hairProds);
         }
@@ -61,6 +154,16 @@ scalp.forEach(s=>{
             scalpCon.push(s.value);
             scalpProds += s.attributes[5].value;
             prodsArr.push(s.attributes[6].value);
+            JSON.parse(s.attributes[6].value).forEach(v=>{
+                if(!prodsImagesArr.includes(v)){
+                    prodsImagesArr.push(v);
+                }
+            })
+            JSON.parse(s.attributes[8].value).forEach(v=>{
+                if(!prodsNameArr.includes(v)){
+                    prodsNameArr.push(v);
+                }
+            })
         }
         console.log(scalpProds);
         
@@ -115,72 +218,18 @@ prev.addEventListener('click',()=>{
 });
 
 
-//report generation
-// report.addEventListener('click',()=>{
-//     if((hairCon.length >1 && scalpCon.length>1)||hairCon.includes('Fine/ Lack of volume','Frizzy/ Unmanageable')) {
-//         if(gender === 'Female'){
-//             if(hairCon.includes('Fine/ Lack of volume','Frizzy/ Unmanageable')){
-//                 hairServ='Hair Service : Reborn';
-//                if(hairCon.includes('Frizzy/ Unmanageable' && !hairCon.includes('Fine/ Lack of volume'))){
-//                 prods ='SP Smoothen , 3tenx HYDRA REVIVE , SB PENETRAITT';
-//                prodsRec.textContent = prodsRec.textContent + prods;
-//                }
-//                else if(!hairCon.includes('Frizzy/ Unmanageable' && hairCon.includes('Fine/ Lack of volume'))){
-//                 prods ='SB VOLUPT';
-//                 prodsRec.textContent = prodsRec.textContent + prods;
-//                }
-    
-//             }
-//         }
-      
-//         scalpServ ='Scalp Service : Reborn';
-//         result.classList.add('active');
-//         serv.textContent=scalpServ + " \n" + hairServ;
-//     }
-//     else if(scalpCon.length>0){
-//         if(gender === 'Female'){
-//             if(scalpCon.includes('Sensitive (Dryness/ Weakness / Rashes)')||scalpCon.includes('Hair Fall')){
-//                 prods='SP Balance';
-//                 prodsRec.textContent= prodsRec.textContent + prods;
-//             }
-//             else if(scalpCon.includes('Oily','Dandruff')){
-//                 prods='SP Purify';
-//                 prodsRec.textContent= prodsRec.textContent + prods;
-//             }
-//         } 
-        
-//         result.classList.add('active');
-//         serv.textContent= serv.textContent + 'Reborn';
-//     }
-//     else if(hairCon.includes('Breakage / Split Ends')||hairCon.includes('Environment Damage (Like sun bleach)')||hairCon.includes('Mechanical Damage (Ironing, tonging)')||hairCon.includes('Chemical Damaged Hair (Permanent Smoothening, Over bleached hair)')){
-//         result.classList.add('active');
-//         serv.textContent=serv.textContent + 'Plex';
-//     }
-//     else if(hairCon.includes('Dryness')||hairCon.includes('Dull/ Lack of Shine')){
-//         if(gender === 'Female'){
-//             if(hairCon.includes('Dryness')){
-//                 prods='Hydra Revive';
-//                 prodsRec.textContent= prodsRec.textContent + prods;
-//             }
-//         }
-//         result.classList.add('active');
-//         serv.textContent=serv.textContent + '3tenx';
-//     }
-//     else if(hairCon.includes('Color Fadage')){
-//         if(gender === 'Female'){
-//     prods='SP Color Save';
-//     prodsRec.textContent= prodsRec.textContent + prods;
-//         }
-        
-//         result.classList.add('active');
-//         serv.textContent=serv.textContent+ 'Reborn/3tenx';
-//     }
-// })
 
+function renderImages(){
+    for(let i =0;i<prodsImagesArr.length;i++){
+        prodsImages[i].src=prodsImagesArr[i];
+    }
+}
 
-
-
-
+function renderNames(){
+    for(let i =0;i<prodsNameArr.length;i++){
+        prodsNames[i].textContent=prodsNameArr[i];
+    }
+}
 
 
 // report gen 2
@@ -195,67 +244,71 @@ for(let i =0;i<prodsArr.length;i++){
     prev.classList.add('hide');
     next.classList.add('hide');
   report.classList.add('hide');
-  if(hairCon.length > 1 && scalpCon.length > 1){
-    scalpServ.textContent = 'Reborn';
+  if(hairCon.length >= 1 && scalpCon.length >= 1){
+    // scalpServ.textContent = 'Reborn';
     hairServ.textContent = 'Reborn';
+    
+    
   }
-  if(scalpCon.length>=1){
-    scalpServ.textContent='Reborn';
+ else if(scalpCon.length>=1){
+    hairServ.textContent='Reborn';
     if(gender === 'Female'){
         if(scalpCon.includes('Dandruff')|| scalpCon.includes('Oily')){
             // prodsRec.textContent = 'Purify';
-            prodsRec.textContent = hairProds + ' , ' + scalpProds;
+            
     
         }
         else if(scalpCon.includes('Sensitive (Dryness/ Weakness / Rashes)')|| scalpCon.includes('Hair Fall')){
             // prodsRec.textContent = 'Balance';
-            prodsRec.textContent = hairProds + ' , ' + scalpProds;
+            
         }
     }
     
   }
-  if(hairCon.length>1 || hairCon.includes('Fine/ Lack of volume') || hairCon.includes('Frizzy/ Unmanageable')){
+  else if(hairCon.includes('Fine/ Lack of volume') || hairCon.includes('Frizzy/ Unmanageable')){
     hairServ.textContent = 'Reborn';
     if(gender === 'Female'){
         if(hairCon.includes('Fine/ Lack of volume')){
             // prodsRec.textContent = 'Volupt';
-            prodsRec.textContent = hairProds + ' , ' + scalpProds;
+            
         }
         else if(hairCon.includes('Frizzy/ Unmanageable')){
             // prodsRec.textContent ='SP SMOOTHEN + 3tenx HYDRA REVIVE +SB PENETRAITT + FMC Protein powered deep /  Moisture Melt Deep';
-            prodsRec.textContent = hairProds + ' , ' + scalpProds;
+            
         }
     }
   }
-  if(hairCon.includes('Environment Damage (Like sun bleach)') || hairCon.includes('Mechanical Damage (Ironing, tonging)') || hairCon.includes('Chemical Damaged Hair (Permanent Smoothening, Over bleached hair)')|| hairCon.includes('Breakage / Split Ends')){
+ else if(hairCon.includes('Environment Damage (Like sun bleach)') || hairCon.includes('Mechanical Damage (Ironing, tonging)') || hairCon.includes('Chemical Damaged Hair (Permanent Smoothening, Over bleached hair)')|| hairCon.includes('Breakage / Split Ends')){
     hairServ.textContent = 'Plex';
     if(gender === 'Female'){
         // prodsRec.textContent='SP REPAIR , Plex , 3tenx ULTIMATE REVITALIZE , SB PENETRAITT';
-        prodsRec.textContent = hairProds + ' , ' + scalpProds;
+        
     }
   }
-  if(hairCon.includes('Color Fadage')){
+ else if(hairCon.includes('Colored Hair')){
     hairServ.textContent = 'Reborn/3tenx';
     if(gender === 'Female'){
-        if(hairCon.includes('Color Fadage')){
+        if(hairCon.includes('Colored Hair')){
             // prodsRec.textContent = 'SP COLOR SAVE';
-            prodsRec.textContent = hairProds + ' , ' + scalpProds;
+            
         }
     }
   }
-  if(hairCon.includes('Dull/ Lack of Shine')|| hairCon.includes('Dryness')){
+  else if(hairCon.includes('Dull/ Lack of Shine')|| hairCon.includes('Dryness')){
     hairServ.textContent = '3tenx'
     if(gender == 'Female'){
         if(hairCon.includes('Dryness')){
             // prodsRec.textContent = 'SP HYDRATE , 3tenx HYDRA REVIVE , SB HYDRE';
-            prodsRec.textContent = hairProds + ' , ' + scalpProds;
+            
         }
         else if(hairCon.includes('Dull/ Lack of Shine')){
             // prodsRec.textContent = 'SP KERATIN LUXE , 3tenx HYDRA REVIVE';
-            prodsRec.textContent = hairProds + ' , ' + scalpProds;
+            
 
         }
     }
   }
+  renderImages();
+  renderNames();
   })
 

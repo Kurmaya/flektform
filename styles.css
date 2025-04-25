@@ -54,12 +54,13 @@ body{
     -webkit-transform: rotate(135deg);
     left:5%;
   }
-  .prev.hide,.next.hide,.report.hide{
+  .prev.hide,.next.hide,.report.hide,.scalp-opts.hide,.hair-opts.hide{
     display: none;
   }
   .hide,.question-holder.hide{
     /* display: none; */
-    left:-100vw;
+    left:100vw;
+    scale: 0;
   }
   .question-holder{
     width: 100%;
@@ -76,6 +77,7 @@ body{
     left:0;
     transition: .3s ease;
     padding:2rem;
+    scale: 1;
     
   }
   .question{
@@ -99,16 +101,28 @@ body{
   }
   label{
     font-size: 1.2rem;
-    /* background: #D6202A; */
+    background: #B81E41;
+    padding:.5rem 1rem;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    transition: .1s ease;
     
   }
   
+  label.active{
+    background: #D6202A;
+    border:2px solid black;
+    color:white;
+  }
 button{
     width: 200px;
-    height: 30px;
+    height: 40px;
     border-radius: 30px;
     border: none;
     margin: auto;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: 'Gotham';
 }
 .result{
     display: none;
@@ -131,6 +145,7 @@ button{
     align-items: center;
     gap: 20px;
     text-align: center;
+    color:white;
 }
 .products{
 display: flex;
@@ -161,15 +176,27 @@ align-items: center;
     /* height: 250px; */
     max-height: 300px;
 }
-input:checked + label{
-  background: rgba(200,200,200,1);
-  color:red;
+
+input[type="checkbox"],input[type="checkbox"]{
+  display: none;
+  width: 20px;
+  height: 20px;
+  padding:1rem;
 }
-input[type="checkbox"]{
-  /* display: none; */
-  
-}
-input[type="checkbox"]:checked{
+/* input[type="checkbox"]:checked{
   border:1px solid black;
   background: #231F20;
-}
+} */
+ .hairRec,.hairProd{
+  font-size: 2rem;
+  color:#231F20;
+ }
+ .prod-holder{
+  display: grid;
+  place-items:center;
+  gap:20px;
+ }
+ .prod-name{
+  color:#231F20;
+  font-size: 1.5rem;
+ }
