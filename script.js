@@ -234,7 +234,7 @@ function renderNames(){
 }
 function renderPrices(){
     for(let i =0;i<prodsNameArr.length;i++){
-        prodsPrice[i].textContent='xxx/-';
+        prodsPrice[i].textContent='Rs. xxx/-';
     }
     
 }
