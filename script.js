@@ -23,6 +23,8 @@ let prodsImagesArr= [];
 let prodsNameArr = [];
 let prodsPriceArr = [];
 
+
+
 //concern selection 
 concernOptions.forEach(c=>{
     c.addEventListener('click',()=>{
@@ -230,7 +232,12 @@ function renderNames(){
         prodsNames[i].textContent=prodsNameArr[i];
     }
 }
-
+function renderPrices(){
+    for(let i =0;i<prodsNameArr.length;i++){
+        prodsPrice[i].textContent='xxx/-';
+    }
+    
+}
 
 // report gen 2
 report.addEventListener('click',()=>{
@@ -310,5 +317,6 @@ for(let i =0;i<prodsArr.length;i++){
   }
   renderImages();
   renderNames();
+  renderPrices();
   })
 
