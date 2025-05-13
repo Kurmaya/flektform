@@ -12,6 +12,11 @@ const prodsPrice = document.querySelectorAll('.prod-price');
 const concernOptions = document.querySelectorAll('.concern-select');
 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 const radios = document.querySelectorAll('input[type="radio"]');
+const done = document.querySelector('.done');
+
+done.addEventListener('click',()=>{
+    location.reload();
+})
 let scalpCon = [];
 let hairCon = [];
 let prodsArr = [];
@@ -136,6 +141,14 @@ hair.forEach(h=>{
                     // console.log(b);
                     
                 })
+                 JSON.parse(h.attributes[7].value).forEach(at=>{
+                    
+                        
+                        prodsPriceArr.push(at);
+                    
+                    // console.log(b);
+                    
+                })
                 console.log(prodsImagesArr);
             }
             console.log(hairProds);
@@ -166,6 +179,11 @@ scalp.forEach(s=>{
                     prodsNameArr.push(v);
                 }
             })
+             JSON.parse(s.attributes[7].value).forEach(v=>{
+                
+                    prodsPriceArr.push(v);
+                
+            })
         }
         console.log(scalpProds);
         
@@ -185,6 +203,8 @@ next.addEventListener('click',()=>{
         prev.classList.remove('hide');
         report.classList.add('hide');
         holders[qCount].classList.remove('hide');
+        next.classList.add('hide');
+        checkArr=[];
     }
     if(qCount == holders.length-1){
         // qCount++;
@@ -234,7 +254,7 @@ function renderNames(){
 }
 function renderPrices(){
     for(let i =0;i<prodsNameArr.length;i++){
-        prodsPrice[i].textContent='Rs. xxx/-';
+        prodsPrice[i].textContent=prodsPriceArr[i];
     }
     
 }
@@ -320,3 +340,60 @@ for(let i =0;i<prodsArr.length;i++){
   renderPrices();
   })
 
+const quest = document.querySelectorAll('.question');
+quest.forEach(q=>{
+    q.querySelectorAll('input').forEach(i=>{
+      i.addEventListener('change',()=>{
+        q.setAttribute('data-check','true');
+      })
+    })
+})
+let b = holders[0].querySelectorAll('.question');
+let checkArr = [],checkArr2 =[], checkArr3 = [], checkArr4 = [];
+b.forEach(br=> checkArr.push(br));
+holders[1].querySelectorAll('.question').forEach(q=>checkArr2.push(q));
+holders[2].querySelectorAll('.question').forEach(q=>checkArr3.push(q));
+holders[3].querySelectorAll('.question').forEach(q=>checkArr4.push(q));
+
+// if(b.forEach(c.getAttribute('data-check'))==='true'){
+// holder[0].setAttribute('data-check','true');
+// }
+
+function check(e){
+return e.getAttribute('data-check')==='true';
+}
+holders[0].addEventListener('change',()=>{
+    // checkArr=[];
+    // checkArr.push(holders[0].querySelectorAll('.question'));
+    let  tr =checkArr.every(x=> x.getAttribute('data-check')==='true');
+    if(tr){
+holders[0].setAttribute('data-check','true');
+document.querySelector('.next').classList.remove('hide');
+    }
+})
+holders[1].addEventListener('change',()=>{
+    // checkArr.push(holders[0].querySelectorAll('.question'));
+    let  tr =checkArr2.every(x=> x.getAttribute('data-check')==='true');
+    if(tr){
+holders[1].setAttribute('data-check','true');
+document.querySelector('.next').classList.remove('hide');
+    }
+})
+holders[2].addEventListener('change',()=>{
+    // checkArr.push(holders[0].querySelectorAll('.question'));
+    let  tr =checkArr3.every(x=> x.getAttribute('data-check')==='true');
+    if(tr){
+holders[2].setAttribute('data-check','true');
+document.querySelector('.next').classList.remove('hide');
+    }
+})
+holders[3].addEventListener('change',()=>{
+    // checkArr.push(holders[0].querySelectorAll('.question'));
+    let  tr =checkArr4.every(x=> x.getAttribute('data-check')==='true');
+    if(tr){
+holders[3].setAttribute('data-check','true');
+document.querySelector('.next').classList.remove('hide');
+    }
+})
+// let tr = holders.every(check);
+// console.log(tr);

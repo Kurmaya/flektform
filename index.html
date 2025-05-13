@@ -10,10 +10,13 @@
     <div class="logo">
         <img src="./assets/bodycraft-logo-white.png" alt="">
     </div>
+          <div class="prev hide"> <i class="arrow left"></i> </div>
+    <div class="next hide"> <i class="arrow right"></i> </div>
     <div id="wrapper">
-        <div class="question-holder">
+        <div class="question-holder holder-1" data-check="">
+      
             <!-- gender -->
-            <div class="question ">
+            <div class="question" data-check="">
                 <h2>What is your gender?</h2>
                 <div class="options">
                     <label>
@@ -23,9 +26,9 @@
                 </div>
             </div>
             <!-- ECM questions -->
-            <div class="question">
+            <div class="question" data-check="">
                 <h2>ECM tool scan result for hair:</h2>
-                <div class="options">
+                <div class="options" data-check="">
                     <label>
                         <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Dryness" > 
                         Dryness
@@ -64,9 +67,9 @@
                     </label>
                 </div>
             </div>
-            <div class="question">
+            <div class="question" data-check="">
                 <h2>ECM tool scan result for scalp: </h2>
-                <div class="options">
+                <div class="options" data-check="">
                     <label>
                         <input type="checkbox" name="What do you dislike (Concern) about your scalp" id="" value="Sensitive (Dryness/ Weakness / Rashes)" > 
                         Sensitive (Dryness/ Weakness / Rashes)
@@ -87,8 +90,8 @@
             </div>
             
         </div>
-        <div class="question-holder hide">
-            <div class="question">
+        <div class="question-holder hide holder-2" data-check="">
+            <div class="question" data-check="">
                 <h2>Is your concern related to:</h2>
                 <div class="options">
                     <label>
@@ -107,9 +110,9 @@
                 </div>
             </div>
         </div>
-        <div class="question-holder hide">
+        <div class="question-holder hide holder-3" data-check="">
                
-            <div class="question">
+            <div class="question" data-check="">
                 <h2>Are you doing a Hair Spa for the first time?</h2>
                 <div class="options">
                     <label>
@@ -123,7 +126,7 @@
                 </div>
                 
             </div>
-            <div class="question hair-opts">
+            <div class="question hair-opts" data-check="true">
                 <h2>When did you do your last hair wash?</h2>
            <div class="options">
             <label >
@@ -136,7 +139,7 @@
             </label>
            </div>
             </div>
-            <div class="question hair-opts">
+            <div class="question hair-opts" data-check="true">
                 <h2>How frequently do you wash your hair?</h2>
                 <div class="options">
                     <label>
@@ -152,7 +155,7 @@
             </div>
            
         </div>
-        <div class="question-holder hide">
+        <div class="question-holder hide holder-4" data-check="">
           
             <div class="question">
                 <h2>What do you like about your hair and scalp</h2>
@@ -223,7 +226,7 @@
         </div>
       
        
-        <div class="question-holder hide">
+        <div class="question-holder hide holder-5">
             <div class="question">
                 <h2>What do you dislike (Concern) about your hair and scalp -</h2>
                 <h3 class="hair-opts">HAIR</h3>
@@ -232,7 +235,7 @@
                         <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Dryness" class="hairCa" 
                         data-prod="SP HYDRATE Conditioner , 3tenx HYDRA REVIVE , SB HYDRE " 
                         data-img='["./assets/images/compressed/sp hydrate cond.jpg","./assets/images/compressed/sp hydrate mask.jpg","./assets/images/compressed/sp hydrate shampoo.jpg","./assets/images/compressed/sp hydrate spray.jpg","./assets/images/compressed/3tenx hydra revive cond.jpg","./assets/images/compressed/3tenx hydra revive shampoo.jpg","./assets/images/compressed/3tenx hydra revive hair mask.jpg","./assets/images/compressed/sb hydre cond.jpg","./assets/images/compressed/sb hydre shampoo.jpg"]'
-                        data-price='[]'
+                        data-price='["Rs.2500/-","Rs.2900/-","Rs.2250/-","Rs.2300/-","Rs.1499/-","Rs.1499/-","Rs.1799/-","Rs.2450/-","Rs.1950/-"]'
                         data-name='["SP Hydrate Conditioner", "SP Hydrate Mask","SP Hydrate Shampoo","SP Hydrate Spray","3tenx Hydra Conditioner", "3tenx Hydra Shampoo","3tenx Hydra Hair Mask", "SB Hydre Condtioner","SP Hydre Shampoo"]' /> 
                         Dryness
                     </label>
@@ -240,7 +243,7 @@
                         <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Breakage / Split Ends" class="hairCa" 
                         data-prod="SP REPAIR , Olaplex , 3tenx ULTIMATE REVITALIZE , SB PENETRAITT " 
                         data-img='["./assets/images/compressed/sp repair shampoo.jpg","./assets/images/compressed/sp repair cond.jpg","./assets/images/compressed/sp repair mask.jpg","./assets/images/compressed/olaplex-0.jpg","./assets/images/compressed/olaplex-3.jpg","./assets/images/compressed/olaplex-4.jpg","./assets/images/compressed/olaplex-7.jpg","./assets/images/compressed/olaplex-8.jpg","./assets/images/compressed/olaplex-9.jpg","./assets/images/compressed/3tenx ulti rev cond.jpg","./assets/images/compressed/3tenx ulti rev hair mask.jpg","./assets/images/compressed/3tenx ulti rev shampoo.jpg","./assets/images/compressed/sb penetraitt cond.avif","./assets/images/compressed/sb penetraitt shampoo.webp"]'
-                        data-price='[]'
+                        data-price='["Rs.2250/-","Rs.2500/-","Rs.2900/-","Rs.2950/-","Rs.2950/-","Rs.2950/-","Rs.2950/-","Rs.2950/-","Rs.2950/-","Rs.2950/-","Rs.1799/-","Rs.1799/-","Rs.1999/-","Rs.2450/-","Rs.1950/-"]'
                         data-name='["SP Repiar Shampoo" , "SP Repiar Conditioner","SP Repair Mask", "Olaplex 0","Olaplex 3","Olaplex 4","Olaplex 7","Olaplex 8","Olaplex 9","3tenx Ultimate Revive Conditioner","3tenx Ultimate Revive Hair Mask","3tenx Ultimate Revive Shampoo","SB Penetraitt Conditioner","SB Penetraitt Shampoo"]'> 
                         Breakage / Split Ends
                     </label>
@@ -248,7 +251,7 @@
                         <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Environment Damage (Like sun bleach)" class="hairCa"
                          data-prod="SP REPAIR , Olaplex , 3tenx ULTIMATE REVITALIZE , SB PENETRAITT " 
                          data-img='["./assets/images/compressed/sp repair shampoo.jpg","./assets/images/compressed/sp repair cond.jpg","./assets/images/compressed/sp repair mask.jpg","./assets/images/compressed/olaplex-0.jpg","./assets/images/compressed/olaplex-3.jpg","./assets/images/compressed/olaplex-4.jpg","./assets/images/compressed/olaplex-7.jpg","./assets/images/compressed/olaplex-8.jpg","./assets/images/compressed/olaplex-9.jpg","./assets/images/compressed/3tenx ulti rev cond.jpg","./assets/images/compressed/3tenx ulti rev hair mask.jpg","./assets/images/compressed/3tenx ulti rev shampoo.jpg","./assets/images/compressed/sb penetraitt cond.avif","./assets/images/compressed/sb penetraitt shampoo.webp"]'
-                         data-price='[]'
+                         data-price='["Rs.2250/-","Rs.2500/-","Rs.2900/-","Rs.2950/-","Rs.2950/-","Rs.2950/-","Rs.2950/-","Rs.2950/-","Rs.2950/-","Rs.2950/-","Rs.1799/-","Rs.1799/-","Rs.1999/-","Rs.2450/-","Rs.1950/-"]'
                          data-name='["SP Repiar Shampoo" , "SP Repiar Conditioner","SP Repair Mask", "Olaplex 0","Olaplex 3","Olaplex 4","Olaplex 7","Olaplex 8","Olaplex 9","3tenx Ultimate Revive Conditioner","3tenx Ultimate Revive Hair Mask","3tenx Ultimate Revive Shampoo","SB Penetraitt Conditioner","SB Penetraitt Shampoo"]'> 
                         Environment Damage (Like sun bleach)
                     </label>
@@ -256,7 +259,7 @@
                         <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Mechanical Damage (Ironing, tonging)" class="hairCa" 
                         data-prod="SP REPAIR , Olaplex , 3tenx ULTIMATE REVITALIZE , SB PENETRAITT " 
                         data-img='["./assets/images/compressed/sp repair shampoo.jpg","./assets/images/compressed/sp repair cond.jpg","./assets/images/compressed/sp repair mask.jpg","./assets/images/compressed/olaplex-0.jpg","./assets/images/compressed/olaplex-3.jpg","./assets/images/compressed/olaplex-4.jpg","./assets/images/compressed/olaplex-7.jpg","./assets/images/compressed/olaplex-8.jpg","./assets/images/compressed/olaplex-9.jpg","./assets/images/compressed/3tenx ulti rev cond.jpg","./assets/images/compressed/3tenx ulti rev hair mask.jpg","./assets/images/compressed/3tenx ulti rev shampoo.jpg","./assets/images/compressed/sb penetraitt cond.avif","./assets/images/compressed/sb penetraitt shampoo.webp"]'
-                        data-price='[]'
+                        data-price='["Rs.2250/-","Rs.2500/-","Rs.2900/-","Rs.2950/-","Rs.2950/-","Rs.2950/-","Rs.2950/-","Rs.2950/-","Rs.2950/-","Rs.2950/-","Rs.1799/-","Rs.1799/-","Rs.1999/-","Rs.2450/-","Rs.1950/-"]'
                         data-name='["SP Repiar Shampoo" , "SP Repiar Conditioner","SP Repair Mask", "Olaplex 0","Olaplex 3","Olaplex 4","Olaplex 7","Olaplex 8","Olaplex 9","3tenx Ultimate Revive Conditioner","3tenx Ultimate Revive Hair Mask","3tenx Ultimate Revive Shampoo","SB Penetraitt Conditioner","SB Penetraitt Shampoo"]'> 
                         Mechanical Damage (Ironing, tonging)
                     </label>
@@ -264,7 +267,7 @@
                         <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Chemical Damaged Hair (Permanent Smoothening, Over bleached hair)" class="hairCa" 
                         data-prod="SP REPAIR , Olaplex , 3tenx ULTIMATE REVITALIZE , SB PENETRAITT " 
                         data-img='["./assets/images/compressed/sp repair shampoo.jpg","./assets/images/compressed/sp repair cond.jpg","./assets/images/compressed/sp repair mask.jpg","./assets/images/compressed/olaplex-0.jpg","./assets/images/compressed/olaplex-3.jpg","./assets/images/compressed/olaplex-4.jpg","./assets/images/compressed/olaplex-7.jpg","./assets/images/compressed/olaplex-8.jpg","./assets/images/compressed/olaplex-9.jpg","./assets/images/compressed/3tenx ulti rev cond.jpg","./assets/images/compressed/3tenx ulti rev hair mask.jpg","./assets/images/compressed/3tenx ulti rev shampoo.jpg","./assets/images/compressed/sb penetraitt cond.avif","./assets/images/compressed/sb penetraitt shampoo.webp"]'
-                        data-price='[]'
+                        data-price='["Rs.2250/-","Rs.2500/-","Rs.2900/-","Rs.2950/-","Rs.2950/-","Rs.2950/-","Rs.2950/-","Rs.2950/-","Rs.2950/-","Rs.2950/-","Rs.1799/-","Rs.1799/-","Rs.1999/-","Rs.2450/-","Rs.1950/-"]'
                         data-name='["SP Repiar Shampoo" , "SP Repiar Conditioner","SP Repair Mask", "Olaplex 0","Olaplex 3","Olaplex 4","Olaplex 7","Olaplex 8","Olaplex 9","3tenx Ultimate Revive Conditioner","3tenx Ultimate Revive Hair Mask","3tenx Ultimate Revive Shampoo","SB Penetraitt Conditioner","SB Penetraitt Shampoo"]'> 
                         Chemical Damaged Hair (Permanent Smoothening, Over bleached hair)
                     </label>
@@ -272,7 +275,7 @@
                         <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Fine/ Lack of volume" class="hairCa" 
                         data-prod="SB VOLUPT " 
                         data-img='["./assets/images/compressed/sb volupt shampoo.jpg","./assets/images/compressed/sb volupt cond.jpg"]'
-                        data-price='[]'
+                        data-price='["Rs.2000/-","Rs.2450/-"]'
                         data-name='["SB Volupt Shampoo","SB Volupt Conditioner"]'> 
                         Fine/ Lack of volume
                     </label>
@@ -280,7 +283,7 @@
                         <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Frizzy/ Unmanageable" class="hairCa" 
                         data-prods="SP SMOOTHEN , 3tenx HYDRA REVIVE , SB PENETRAITT , FMC Protein powered deep /  Moisture Melt Deep " 
                         data-img='["./assets/images/compressed/sp smoothen shampoo.jpg","./assets/images/compressed/sp smoothen cond.jpg","./assets/images/compressed/3tenx hydra revive cond.jpg","./assets/images/compressed/3tenx hydra revive shampoo.jpg","./assets/images/compressed/3tenx hydra revive hair mask.jpg","./assets/images/compressed/sb penetraitt cond.avif","./assets/images/compressed/sb penetraitt shampoo.webp"]'
-                        data-price='[]'
+                        data-price='["Rs.2250/-","Rs.2600/-","Rs.1499/-","Rs.1499/-","Rs.1799/-","Rs.2450/-","Rs.1950/-"]'
                         data-name='["SP Smoothen Shampoo","SP Smoothen Conditioner","3tenx Hydra Revive Conditioner","3tenx Hydra Revive Shampoo","3tenx Hydra Revive Hair Mask","SB Penetraitt Conditioner","SB Penetraitt Shampoo"]'> 
                         Frizzy/ Unmanageable
                     </label>
@@ -288,7 +291,7 @@
                         <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Dull/ Lack of Shine" class="hairCa" 
                         data-prod="SP KERATIN LUXE , 3tenx HYDRA REVIVE " 
                         data-img='["./assets/images/compressed/sp LUXE.jpg","./assets/images/compressed/sp luxe mask.jpg","./assets/images/compressed/sp luxe shampoo.jpg","./assets/images/compressed/sp luxe cond.jpg","./assets/images/compressed/3tenx hydra revive cond.jpg","./assets/images/compressed/3tenx hydra revive shampoo.jpg","./assets/images/compressed/3tenx hydra revive hair mask.jpg"]'
-                        data-price='[]'
+                        data-price='["Rs.3500/-","Rs.3150/-","Rs.2250/-","Rs.2500/-","Rs.1499/-","Rs.1499/-","Rs.1799/-"]'
                         data-name='["SP Keratin Luxe Elixir", "SP Luxe Mask","SP Luxe Shampoo", "SP Luxe Conditioner","3tenx Hydra Revive Conditioner","3tenx Hydra Revive Shampoo","3tenx Hydra Revive Hair Mask"]'> 
                         Dull/ Lack of Shine
                     </label>
@@ -296,7 +299,7 @@
                         <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Colored Hair" class="hairCa" 
                         data-prod="SP COLOR SAVE " 
                         data-img='["./assets/images/compressed/sp color save shampoo.jpg","./assets/images/compressed/sp color save cond.jpg","./assets/images/compressed/sp color save mask.jpg"]'
-                        data-price='[]'
+                        data-price='["Rs.2050/-","Rs.2600/-","Rs.2900/-" ]'
                         data-name='["SP Color Save Shampoo","SP Color Save Conditioner", "SP Color Save Mask" ]'> 
                         Colored Hair
                     </label>
@@ -308,7 +311,7 @@
                             <input type="checkbox" name="What do you dislike (Concern) about your scalp" id="" value="Sensitive (Dryness/ Weakness / Rashes)" class="scalpCa" 
                             data-prod="SP BALANCE " 
                             data-img='["./assets/images/compressed/sp balance elix.jpg","./assets/images/compressed/sp balance shampoo.jpg","./assets/images/compressed/sp balance lotion.jpg","./assets/images/compressed/sp balance mask.jpg"]' 
-                            data-price='[]'
+                            data-price='["Rs.2900/-","Rs.2250/-","Rs.2400/-","Rs.2900/- "]'
                         data-name='["SP Balance Elix","SP Balance Shampoo","SP Balance Lotion","SP Balance Mask"]'> 
                             Sensitive (Dryness/ Weakness / Rashes)
                         </label>
@@ -316,7 +319,7 @@
                             <input type="checkbox" name="What do you dislike (Concern) about your scalp" id="" value="Hair Fall" class="scalpCa" 
                             data-prod="SP BALANCE " 
                             data-img='["./assets/images/compressed/sp balance elix.jpg","./assets/images/compressed/sp balance shampoo.jpg","./assets/images/compressed/sp balance lotion.jpg","./assets/images/compressed/sp balance mask.jpg"]'
-                            data-price='[]'
+                            data-price='["Rs.2900/-","Rs.2250/-","Rs.2400/-","Rs.2900/- "]'
                         data-name='["SP Balance Elix","SP Balance Shampoo","SP Balance Lotion","SP Balance Mask"]'> 
                             Hair Fall
                         </label>
@@ -324,7 +327,7 @@
                             <input type="checkbox" name="What do you dislike (Concern) about your scalp" id="" value="Oily" class="scalpCa" 
                             data-prod="SP PURIFY " 
                             data-img='["./assets/images/compressed/sp purify lotion.jpg","./assets/images/compressed/sp purify mask.jpg","./assets/images/compressed/sp purify peel.jpg","./assets/images/compressed/sp purify shampoo.jpg"]'
-                            data-price='[]'
+                            data-price='["Rs.2400/-","Rs.2900/-","Rs.2000/-","Rs.2250/-"]'
                         data-name='["SP Puriy Lotion", "SP Purify Mask","SP Purify Peel","SP Purify Shampoo"]'> 
                             Oily
                         </label>
@@ -332,7 +335,7 @@
                             <input type="checkbox" name="What do you dislike (Concern) about your scalp" id="" value="Dandruff" class="scalpCa" 
                             data-prod="SP PURIFY " 
                             data-img='["./assets/images/compressed/sp purify lotion.jpg","./assets/images/compressed/sp purify mask.jpg","./assets/images/compressed/sp purify peel.jpg","./assets/images/compressed/sp purify shampoo.jpg"]'
-                            data-price='[]'
+                            data-price='["Rs.2400/-","Rs.2900/-","Rs.2000/-","Rs.2250/-"]'
                         data-name='["SP Puriy Lotion", "SP Purify Mask","SP Purify Peel","SP Purify Shampoo"]'> 
                             Dandruff
                         </label>
@@ -464,13 +467,13 @@
 
 <h3></h3>
             </div>
-                            <button class="done">Submit</button>
+                            <button class="done">Home</button>
         </div>
         <button class="report hide">Report</button>
        
     </div>
-    <div class="prev hide"> <i class="arrow left"></i> </div>
-    <div class="next"> <i class="arrow right"></i> </div>
+    <!-- <div class="prev hide"> <i class="arrow left"></i> </div>
+    <div class="next"> <i class="arrow right"></i> </div> -->
     <script src="./script.js"></script>
 </body>
 </html>
