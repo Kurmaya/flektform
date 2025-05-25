@@ -4,6 +4,7 @@ const report = document.querySelector('.report');
 const result = document.querySelector('.result');
 // const scalpServ = document.querySelector('.scalpRec');
 const hairServ =document.querySelector('.hairRec');
+const servPrice = document.querySelector('.servPrice');
 const prodsRec = document.querySelector('.hairProd');
 const genderOptions = document.querySelectorAll('.gender');
 const prodsImages = document.querySelectorAll('.products img');
@@ -13,9 +14,11 @@ const concernOptions = document.querySelectorAll('.concern-select');
 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 const radios = document.querySelectorAll('input[type="radio"]');
 const done = document.querySelector('.done');
+const semiSubmit = document.querySelector('.semi-flow');
 
 done.addEventListener('click',()=>{
-    location.reload();
+    document.querySelector('#send').click();
+
 })
 let scalpCon = [];
 let hairCon = [];
@@ -32,8 +35,11 @@ let prodsPriceArr = [];
 
 //concern selection 
 concernOptions.forEach(c=>{
+    
     c.addEventListener('click',()=>{
         if(c.checked){
+            document.getElementById('concern').textContent=c.value;
+            document.getElementById('concern').value=c.value;
             switch (c.value) {
                 case 'Hair':
                     document.querySelectorAll('.hair-opts').forEach(s=>{
@@ -41,11 +47,13 @@ concernOptions.forEach(c=>{
                     });
                     document.querySelectorAll('.scalp-opts').forEach(s=>{
                         s.classList.add('hide');
+                        s.setAttribute('data-check','true');
                     });
                     break;
             case 'Scalp':
                 document.querySelectorAll('.hair-opts').forEach(s=>{
                     s.classList.add('hide');
+                    s.setAttribute('data-check','true');
                     document.querySelectorAll('.scalp-opts').forEach(s=>{
                         s.classList.remove('hide');
                     });
@@ -79,7 +87,10 @@ checkboxes.forEach(box=>{
 //gender handling
 genderOptions.forEach(g=>{
     g.addEventListener('click',()=>{
-gender=g.value
+gender=g.value;
+document.getElementById('gender').value=g.value;
+document.getElementById('gender').textContent=g.value;
+console.log(document.getElementById('gender').value);
     })
 })
 
@@ -99,7 +110,7 @@ hair.forEach(h=>{
         }
         else if(h.checked){
             hairCon.push(h.value);
-            
+            document.getElementById('hairDislike').textContent= hairCon.join(", ");
             if(h.value.includes('Environment Damage (Like sun bleach)'|| 'Mechanical Damage (Ironing, tonging)' || 'Chemical Damaged Hair (Permanent Smoothening, Over bleached hair)'|| 'Breakage / Split Ends') ){
                 // hairProds = hairProds += ' ' + 'SP REPAIR , 3tenx ULTIMATE REVITALIZE , SB PENETRAITT ';
                 // hairProds +=  h.attributes[5].value;
@@ -167,6 +178,7 @@ scalp.forEach(s=>{
         }
         else if(s.checked){
             scalpCon.push(s.value);
+            document.getElementById('scalpDislike').textContent= scalpCon.join(", ");
             scalpProds += s.attributes[5].value;
             prodsArr.push(s.attributes[6].value);
             JSON.parse(s.attributes[6].value).forEach(v=>{
@@ -195,7 +207,14 @@ scalp.forEach(s=>{
 //previous and next button handling
 let qCount = 0;
 next.addEventListener('click',()=>{
-    if(qCount >= 0){
+   if(document.getElementById('semi').checked){
+        
+        holders.forEach(hold=>{
+            hold.classList.add('hide');
+        })
+        document.querySelector('.holder-semi').classList.remove('hide');
+    }
+ else if(qCount >= 0){
         holders.forEach(hold=>{
             hold.classList.add('hide');
         })
@@ -212,7 +231,7 @@ next.addEventListener('click',()=>{
         next.classList.add('hide');
         report.classList.remove('hide');
     }
-
+ 
 })
 
 prev.addEventListener('click',()=>{
@@ -258,7 +277,28 @@ function renderPrices(){
     }
     
 }
-
+//semi flow gen 
+semiSubmit.addEventListener('click',()=>{
+    holders.forEach(h=>{
+        h.classList.add('hide');
+    }); 
+    for(let i =0;i<prodsArr.length;i++){
+    prodsImages[i].src= prodsArr[i];
+}
+if(scalpCon.includes('Hair Fall')||scalpCon.includes('Dandruff')){
+    document.querySelector('.servImg').src='./assets/images/compressed/sp-serv.png';
+}
+else{
+    document.querySelector('.servImg').src='./assets/images/compressed/3tenx-serv.png';
+}
+   result.classList.add('active');
+    prev.classList.add('hide');
+    next.classList.add('hide');
+  report.classList.add('hide');
+  renderImages();
+  renderNames();
+  renderPrices();
+})
 // report gen 2
 report.addEventListener('click',()=>{
     holders.forEach(h=>{
@@ -274,11 +314,14 @@ for(let i =0;i<prodsArr.length;i++){
   if(hairCon.length >= 1 && scalpCon.length >= 1){
     // scalpServ.textContent = 'Reborn';
     hairServ.textContent = 'Reborn';
-    
+    document.querySelector('.servImg').src='./assets/images/compressed/sp-serv.png'
+    servPrice.innerHTML = 'Rs.1950/-<sup>*</sup> onwards <sub> *All service prices are exclusive of Tax</sub>';
     
   }
  else if(scalpCon.length>=1){
     hairServ.textContent='Reborn';
+    document.querySelector('.servImg').src='./assets/images/compressed/sp-serv.png'
+    servPrice.innerHTML = 'Rs.1950/-<sup>*</sup> onwards <sub> *All service prices are exclusive of Tax</sub>';
     if(gender === 'Female'){
         if(scalpCon.includes('Dandruff')|| scalpCon.includes('Oily')){
             // prodsRec.textContent = 'Purify';
@@ -294,6 +337,8 @@ for(let i =0;i<prodsArr.length;i++){
   }
   else if(hairCon.includes('Fine/ Lack of volume') || hairCon.includes('Frizzy/ Unmanageable')){
     hairServ.textContent = 'Reborn';
+    document.querySelector('.servImg').src='./assets/images/compressed/sp-serv.png'
+    servPrice.innerHTML = 'Rs.1950/-<sup>*</sup> onwards <sub> *All service prices are exclusive of Tax</sub>';
     if(gender === 'Female'){
         if(hairCon.includes('Fine/ Lack of volume')){
             // prodsRec.textContent = 'Volupt';
@@ -307,6 +352,8 @@ for(let i =0;i<prodsArr.length;i++){
   }
  else if(hairCon.includes('Environment Damage (Like sun bleach)') || hairCon.includes('Mechanical Damage (Ironing, tonging)') || hairCon.includes('Chemical Damaged Hair (Permanent Smoothening, Over bleached hair)')|| hairCon.includes('Breakage / Split Ends')){
     hairServ.textContent = 'Plex';
+    servPrice.innerHTML = 'Rs.2000/-<sup>*</sup> onwards <sub> *All service prices are exclusive of Tax</sub>';
+    document.querySelector('.servImg').src='./assets/images/compressed/olapex-serv.png'
     if(gender === 'Female'){
         // prodsRec.textContent='SP REPAIR , Plex , 3tenx ULTIMATE REVITALIZE , SB PENETRAITT';
         
@@ -314,6 +361,8 @@ for(let i =0;i<prodsArr.length;i++){
   }
  else if(hairCon.includes('Colored Hair')){
     hairServ.textContent = 'Reborn/3tenx';
+    servPrice.innerHTML = 'Rs.1950 / Rs.2500<sup>*</sup> onwards <sub> *All service prices are exclusive of Tax</sub>';
+    document.querySelector('.servImg').src='./assets/images/compressed/3tenx-serv.png'
     if(gender === 'Female'){
         if(hairCon.includes('Colored Hair')){
             // prodsRec.textContent = 'SP COLOR SAVE';
@@ -322,7 +371,9 @@ for(let i =0;i<prodsArr.length;i++){
     }
   }
   else if(hairCon.includes('Dull/ Lack of Shine')|| hairCon.includes('Dryness')){
-    hairServ.textContent = '3tenx'
+    hairServ.textContent = '3tenx';
+    servPrice.innerHTML = 'Rs.2500/-<sup>*</sup> onwards <sub> *All service prices are exclusive of Tax</sub>';
+    document.querySelector('.servImg').src='./assets/images/compressed/3tenx-serv.png'
     if(gender == 'Female'){
         if(hairCon.includes('Dryness')){
             // prodsRec.textContent = 'SP HYDRATE , 3tenx HYDRA REVIVE , SB HYDRE';
@@ -349,11 +400,12 @@ quest.forEach(q=>{
     })
 })
 let b = holders[0].querySelectorAll('.question');
-let checkArr = [],checkArr2 =[], checkArr3 = [], checkArr4 = [];
+let checkArr = [],checkArr2 =[], checkArr3 = [], checkArr4 = [],checkArr5=[];
 b.forEach(br=> checkArr.push(br));
 holders[1].querySelectorAll('.question').forEach(q=>checkArr2.push(q));
 holders[2].querySelectorAll('.question').forEach(q=>checkArr3.push(q));
 holders[3].querySelectorAll('.question').forEach(q=>checkArr4.push(q));
+holders[4].querySelectorAll('.question').forEach(q=>checkArr5.push(q));
 
 // if(b.forEach(c.getAttribute('data-check'))==='true'){
 // holder[0].setAttribute('data-check','true');
@@ -395,5 +447,170 @@ holders[3].setAttribute('data-check','true');
 document.querySelector('.next').classList.remove('hide');
     }
 })
+holders[4].addEventListener('change',()=>{
+    // checkArr=[];
+    // checkArr.push(holders[0].querySelectorAll('.question'));
+    let  tr =checkArr.every(x=> x.getAttribute('data-check')==='true');
+    if(tr){
+holders[4].setAttribute('data-check','true');
+document.querySelector('.next').classList.remove('hide');
+    }
+})
 // let tr = holders.every(check);
 // console.log(tr);
+const heatStyle = document.querySelector('.heat-yes');
+const chemStyle = document.querySelector('.chem-yes');
+heatStyle.addEventListener('change',()=>{
+    if(heatStyle.checked){
+        document.querySelectorAll('.hold')[0].classList.remove('hide');
+    }
+})
+chemStyle.addEventListener('change',()=>{
+    if(chemStyle.checked){
+        document.querySelectorAll('.hold')[1].classList.remove('hide');
+    }
+})
+
+//html data to form push
+
+document.querySelector('select').addEventListener('change',()=>{
+    document.getElementById('branch').value= document.querySelector('select').value;
+})
+let nameArr ,phoneArr,ecmHair=[],ecmScalp=[],hcare;
+
+// push name into nameArr
+document.getElementById('yourname').addEventListener('change',()=>{
+// nameArr.push(document.getElementById('yourname').value);
+nameArr = document.getElementById('yourname').value;
+document.getElementById('name').value=nameArr;
+document.getElementById('name').textContent=nameArr;
+console.log(document.getElementById('name').textContent);
+});
+// push phone numberinto phoneArr
+document.getElementById('phNum').addEventListener('change',()=>{
+phoneArr= document.getElementById('phNum').value;
+document.getElementById('contactNumber').value=phoneArr;
+document.getElementById('contactNumber').textContent=phoneArr;
+console.log(phoneArr);
+});
+//ECM push into form
+document.querySelector('.ecm-ha').addEventListener('change',(e)=>{
+ecmHair.push(e.target.value);
+document.getElementById('ecm-hair').textContent = ecmHair.join(", ");
+document.getElementById('ecm-hair').value = ecmHair.join(", ");
+    console.log(ecmHair);
+});
+document.querySelector('.ecm-sc').addEventListener('change',(e)=>{
+ecmScalp.push(e.target.value);
+document.getElementById('ecm-scalp').textContent = ecmScalp.join(", ");
+document.getElementById('ecm-scalp').value = ecmScalp.join(", ");
+    console.log(ecmScalp);
+});
+
+//semi perm into form
+
+document.querySelector('.semi').addEventListener('change',(e)=>{
+document.getElementById('semi-perm').textContent=e.target.value;
+document.getElementById('semi-perm').value=e.target.value;
+console.log(e.target.value);
+})
+
+//homeproducts into form
+document.querySelector('.homecare').addEventListener('change',()=>{
+    hcare= document.querySelector('.homecare').value;
+    document.getElementById('homeProds').textContent=hcare;
+    document.getElementById('homeProds').value=hcare;
+    console.log(document.getElementById('homeProds').textContent);
+})
+
+//hair likes , scalp likes push
+
+const hLike = document.querySelectorAll('.hairLike'),sLike = document.querySelectorAll('.scalpLike');
+let hlike=[],slike=[];
+hLike.forEach(h=>{
+    h.addEventListener('click',()=>{
+        if(h.checked){
+            hlike.push(h.value);
+            
+        }
+        document.getElementById('hairLike').textContent= hlike.join(", ");
+        document.getElementById('hairLike').value= hlike.join(", ");
+    })
+})
+
+sLike.forEach(s=>{
+    s.addEventListener('click',()=>{
+        if(s.checked){
+            slike.push(s.value);
+        }
+        document.getElementById('scalpLike').textContent= slike.join(", ");
+        document.getElementById('scalpLike').textContent= value.join(", ");
+    })
+    
+})
+
+//heat style push
+const heat =document.querySelectorAll('input[name="Do you heatstyle?"]');
+
+heat.forEach(h=>{
+    h.addEventListener('click',()=>{
+        if(h.checked){
+            document.getElementById('heatStyle').textContent= h.value;
+            document.getElementById('heatStyle').value= h.value;
+        }
+    })
+})
+
+document.getElementById('hairFreqText').addEventListener('change',()=>{
+    document.getElementById('heatStyleFreq').textContent=document.getElementById('hairFreqText').value;
+    document.getElementById('heatStyleFreq').value=document.getElementById('hairFreqText').value;
+})
+
+
+//chem push
+
+const chem = document.querySelectorAll('input[name="Do you do chemical treatments ?"]');
+
+chem.forEach(c=>{
+    c.addEventListener('click',()=>{
+        if(c.checked){
+            document.getElementById('chemTreat').textContent= c.value;
+            document.getElementById('chemTreat').value= c.value;
+        }
+    })
+});
+
+document.getElementById('chemText').addEventListener('change',()=>{
+    document.getElementById('chemTreatName').textContent= document.getElementById('chemText').value;
+    document.getElementById('chemTreatName').value= document.getElementById('chemText').value;
+})
+
+
+//spa push
+
+document.querySelectorAll('#spa input[type="radio"]').forEach(s=>{
+    s.addEventListener('click',()=>{
+        if(s.checked){
+            document.getElementById('firstSpa').textContent=s.value;
+            document.getElementById('firstSpa').value=s.value;
+        }
+    })
+})
+
+document.querySelectorAll('#wash input[type="radio"]').forEach(s=>{
+    s.addEventListener('click',()=>{
+        if(s.checked){
+            document.getElementById('lastWash').textContent=s.value;
+            document.getElementById('lastWash').value=s.value;
+        }
+    })
+})
+
+document.querySelectorAll('#wash-freq input[type="radio"]').forEach(s=>{
+    s.addEventListener('click',()=>{
+        if(s.checked){
+            document.getElementById('washFreq').textContent=s.value;
+            document.getElementById('washFreq').value=s.value;
+        }
+    })
+})

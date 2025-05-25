@@ -10,11 +10,53 @@
     <div class="logo">
         <img src="./assets/bodycraft-logo-white.png" alt="">
     </div>
+ 
           <div class="prev hide"> <i class="arrow left"></i> </div>
     <div class="next hide"> <i class="arrow right"></i> </div>
     <div id="wrapper">
+    
         <div class="question-holder holder-1" data-check="">
-      
+   <div class="question" data-check="true">
+                <div class="dropdown">
+    <h2>Choose Branch:</h2>
+    <div class="options" data-check="true">
+<select name="Branch">
+    <option value="Assay Road">Assay Road</option>
+    <option value="HRBR">HRBR</option>
+    <option value="HSR">HSR</option>
+    <option value="J P Nagar">J P Nagar</option>
+    <option value="Jayanagar">Jayanagar</option>
+    <option value="Koramangala">Koramangala</option>
+    <option value="Sadashiv Nagar">Sadashiv Nagar</option>
+    <option value="Lavelle Road">Lavelle Road</option>
+    <option value="Indiranagar">Indiranagar</option>
+    <option value="Whitefield">Whitefield</option>
+    <option value="New Bel Road">New Bel Road</option>
+    <option value="Kanakpura">Kanakpura</option>
+    <option value="Bannerghatta	">Bannerghatta	</option>
+    <option value="R R Nagar">R R Nagar</option>
+  </select>
+    </div>
+  
+    </div>
+   </div>
+              <div class="question">
+                <h2>Your Name</h2>
+                <div class="options">
+
+                
+                
+                <input name="name" type="text" required placeholder="Name" id="yourname">
+            
+                </div>
+            </div>
+        
+       <div class="question">
+           <h2>Contact Number</h2>
+         <div class="options" >
+            <input type="tel" name="contact" required placeholder="Contact number" id="phNum">
+        </div>
+       </div>
             <!-- gender -->
             <div class="question" data-check="">
                 <h2>What is your gender?</h2>
@@ -25,8 +67,12 @@
         <input type="radio" name="What is your gender?" id="" value="Female" class="gender">Female </label>
                 </div>
             </div>
-            <!-- ECM questions -->
-            <div class="question" data-check="">
+          
+            
+        </div>
+        <div class="question-holder hide holder-2" data-check="">
+              <!-- ECM questions -->
+            <div class="question ecm-ha" data-check="">
                 <h2>ECM tool scan result for hair:</h2>
                 <div class="options" data-check="">
                     <label>
@@ -67,7 +113,7 @@
                     </label>
                 </div>
             </div>
-            <div class="question" data-check="">
+            <div class="question ecm-sc" data-check="">
                 <h2>ECM tool scan result for scalp: </h2>
                 <div class="options" data-check="">
                     <label>
@@ -88,9 +134,108 @@
                     </label>
                 </div>
             </div>
+            <div class="question semi">
+                <h2>Have you done semi permanent smoothening in the past 2-3 months?</h2>
+                <div class="options break" data-check="" data-name="">
+                    <label>
+                        <input type="radio" name="Have you done semi permanent smoothening in the past 2-3 months?" id="semi" value="yes"> 
+                        yes
+                    </label>
+                    <label >
+                        <input type="radio" name="Have you done semi permanent smoothening in the past 2-3 months?" id="" value="no"> 
+                        no
+                    </label>
+                </div>
+            </div>
             
         </div>
-        <div class="question-holder hide holder-2" data-check="">
+        <div class="holder-semi hide">
+
+    <div class="question" data-check="">
+                <h2>Is your concern related to:</h2>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="Is your concern related to:" class="concern-select" value="Hair">
+                        Hair
+                    </label>
+                    <label>
+                        <input type="radio" name="Is your concern related to:" class="concern-select" value="Scalp">
+                        Scalp
+                    </label>
+                    <label>
+                        <input type="radio" name="Is your concern related to:" class="concern-select" value="Both(Hair & Scalp)">
+                        Both(Hair & Scalp)
+                    </label>
+                    
+                </div>
+               
+            </div>
+            <div class="question">
+                <h2>What do you dislike (concern) about your </h2>
+                <h3 class="scalp-opts hide">Scalp</h3>
+                <div class="options scalp-opts hide">
+                     <label>
+                            <input type="checkbox" name="What do you dislike (Concern) about your scalp" id="" value="Hair Fall" class="scalpCa" 
+                            data-prod="SP BALANCE " 
+                            data-img='["./assets/images/compressed/sp balance lotion.jpg","./assets/images/compressed/sp balance elix.jpg"]'
+                            data-price='["Rs.2400/-","Rs.5650/-"]'
+                        data-name='["SP Balance Lotion","SP Balance Energy Serum"]'> 
+                            Hair Fall
+                        </label>
+                         <label>
+                            <input type="checkbox" name="What do you dislike (Concern) about your scalp" id="" value="Dandruff" class="scalpCa" 
+                            data-prod="SP PURIFY " 
+                            data-img='["./assets/images/compressed/sp purify peel.jpg","./assets/images/compressed/sp purify lotion.jpg"]'
+                            data-price='["Rs.2900/-","Rs.2400/-"]'
+                        data-name='["SP Purify Peel- for Stubborn Dandruff","SP Purify Lotion - for Mild Dandruff"]'> 
+                            Dandruff
+                        </label>
+                </div>
+                <h3 class="hair-opts hide">Hair</h3>
+                  <div class="options hair-opts hide">
+                    <label>
+                        <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Dryness" class="hairCa" 
+                        data-prod="3tenx HYDRA REVIVE" 
+                        data-img='["./assets/images/compressed/3tenx hydra revive cond.jpg","./assets/images/compressed/3tenx hydra revive shampoo.jpg","./assets/images/compressed/3tenx hydra revive hair mask.jpg"]'
+                        data-price='["Rs.1499/-","Rs.1499/-","Rs.1799/-"]'
+                        data-name='["3tenx Hydra Conditioner", "3tenx Hydra Shampoo","3tenx Hydra Hair Mask"]' /> 
+                        Dryness
+                    </label>
+             
+                    <label>
+                        <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Environment Damage (Like sun bleach)" class="hairCa"
+                         data-prod="3tenx ULTIMATE REVITALIZE" 
+                         data-img='["./assets/images/compressed/3tenx ulti rev cond.jpg","./assets/images/compressed/3tenx ulti rev hair mask.jpg","./assets/images/compressed/3tenx ulti rev shampoo.jpg"]'
+                         data-price='["Rs.1799/-","Rs.1999/-","Rs.1799/-"]'
+                         data-name='["3tenx Ultimate Revive Conditioner","3tenx Ultimate Revive Hair Mask","3tenx Ultimate Revive Shampoo"]'> 
+                        Damaged Hair
+                    </label>
+                
+                   
+                
+                    <label>
+                        <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Frizzy/ Unmanageable" class="hairCa" 
+                        data-prod="3tenx HYDRA REVIVE" 
+                        data-img='["./assets/images/compressed/3tenx hydra revive cond.jpg","./assets/images/compressed/3tenx hydra revive shampoo.jpg","./assets/images/compressed/3tenx hydra revive hair mask.jpg"]'
+                        data-price='["Rs.1499/-","Rs.1499/-","Rs.1799/-"]'
+                        data-name='["3tenx Hydra Conditioner", "3tenx Hydra Shampoo","3tenx Hydra Hair Mask"]' /> 
+                        Frizzy/ Unmanageable
+                    </label>
+                    <label>
+                        <input type="checkbox" name="What do you dislike (Concern) about your hair" id="" value="Dull/ Lack of Shine" class="hairCa" 
+                       data-prod="3tenx HYDRA REVIVE" 
+                        data-img='["./assets/images/compressed/3tenx hydra revive cond.jpg","./assets/images/compressed/3tenx hydra revive shampoo.jpg","./assets/images/compressed/3tenx hydra revive hair mask.jpg"]'
+                        data-price='["Rs.1499/-","Rs.1499/-","Rs.1799/-"]'
+                        data-name='["3tenx Hydra Conditioner", "3tenx Hydra Shampoo","3tenx Hydra Hair Mask"]' /> 
+                        Dull/ Lack of Shine
+                    </label>
+                  
+                </div>
+            </div>
+            <button class="semi-flow">Submit</button>
+
+        </div>
+        <div class="question-holder hide">
             <div class="question" data-check="">
                 <h2>Is your concern related to:</h2>
                 <div class="options">
@@ -108,13 +253,60 @@
                     </label>
                     
                 </div>
+               
             </div>
+             <div class="question" data-check="">
+                    <h2>What homecare products are you currently using</h2>
+                    <div class="options">
+                        <input type="text" class="homecare">
+                    </div>
+                </div>
+                <div class="question" data-check="">
+                    <h2>Do you heatstyle?</h2>
+                    <div class="options heat" data-check="">
+                    <label>
+                        <input class="heat-yes" type="radio" name="Do you heatstyle?" id="" value="yes"> 
+                        yes
+                    </label>
+                    <label >
+                        <input type="radio" class="heat-no" name="Do you heatstyle?" id="" value="no" >  
+                        no
+                    </label>
+                    <div class="hold hide">
+                        <h2>How frequently do you heatstyle your hair?</h2>
+                        <input type="text" name="How frequently do you heatstyle your hair?" id="hairFreqText">
+                    </div>
+                    
+                    
+                </div>
+                </div>
+                <div class="question" data-check="">
+                    <h2>Do you do chemical treatments ?</h2>
+                        <div class="options chem" data-check="">
+                    <label>
+                        <input class="chem-yes" type="radio" name="Do you do chemical treatments ?" id="" value="yes"> 
+                        yes
+                    </label>
+                    <label >
+                        <input type="radio" class="chem-no" name="Do you do chemical treatments ?" id="" value="no" >  
+                        no
+                    </label>
+
+                    <div class="hold hide"  style="margin-top:10px; margin-right: 10%;">
+                        <h2>What are these chemical treatments?</h2>
+                        <input type="text" name="What are these chemical treatments?" id="chemText">
+                    </div>
+                    
+                    
+                </div>
+                 
+                </div>
         </div>
         <div class="question-holder hide holder-3" data-check="">
                
-            <div class="question" data-check="">
+            <div class="question" data-check="" id="spa">
                 <h2>Are you doing a Hair Spa for the first time?</h2>
-                <div class="options">
+                <div class="options" data-check="">
                     <label>
                         <input type="radio" name="Are you doing a Hair Spa for the first time?" id="" value="yes"> 
                         yes
@@ -126,7 +318,7 @@
                 </div>
                 
             </div>
-            <div class="question hair-opts" data-check="true">
+            <div class="question hair-opts" data-check="true" id="wash">
                 <h2>When did you do your last hair wash?</h2>
            <div class="options">
             <label >
@@ -139,7 +331,7 @@
             </label>
            </div>
             </div>
-            <div class="question hair-opts" data-check="true">
+            <div class="question hair-opts" data-check="true" id="wash-freq">
                 <h2>How frequently do you wash your hair?</h2>
                 <div class="options">
                     <label>
@@ -158,10 +350,10 @@
         <div class="question-holder hide holder-4" data-check="">
           
             <div class="question">
-                <h2>What do you like about your hair and scalp</h2>
+                <h2>What do you like about your</h2>
                 
                     <h3 class="hair-opts">HAIR</h3><br>
-                <div class="options hair-opts">
+                <div class="options hair-opts" data-check="true">
                     <label>
                         <input value="Length" type="checkbox" name="What do you like about your hair " id="" class="hairLike"> 
                         Length
@@ -201,7 +393,7 @@
                 </div>
                 
             <h3 class="scalp-opts">SCALP</h3>
-            <div class="options scalp-opts">
+            <div class="options scalp-opts" data-check="true">
                 <label >
                     <input value="Normal" type="checkbox" name="What do you like about your scalp " id="" class="scalpLike"> 
                     Normal
@@ -228,7 +420,7 @@
        
         <div class="question-holder hide holder-5">
             <div class="question">
-                <h2>What do you dislike (Concern) about your hair and scalp -</h2>
+                <h2>What do you dislike (Concern) about your -</h2>
                 <h3 class="hair-opts">HAIR</h3>
                 <div class="options hair-opts ">
                     <label>
@@ -348,7 +540,8 @@
             
             <div class="service">
                 <h2>Service Recommendation: <h3 class="hairRec"></h3></h2>
-                <span ></span>
+                <img src="" alt="" class="servImg">
+                <span class="servPrice"></span>
                 <!-- <span >Scalp Reccomendation: <h3 class="scalpRec"></h3></span> -->
             </div>
             <div class="products">
@@ -469,9 +662,37 @@
             </div>
                             <button class="done">Home</button>
         </div>
-        <button class="report hide">Report</button>
+        <button class="report hide">Submit</button>
        
     </div>
+    <form 
+  method="POST" 
+  action="https://script.google.com/macros/s/AKfycbyfn55IA_LzoYlgvQPdBzeNJKNdKKLjXfUJnmUexKWDhkxVNDnehhZIZpvT0nu1C5Pc/exec"
+>
+<input type="text" name="Branch" id="branch">
+<input name="Contact Number" type="tel" placeholder="phone number" id="contactNumber">
+<input name="Name" type="text" placeholder="Name" id="name">
+  <input type="text" name="Gender" id="gender">
+  <input type="text" name="ECM Scan Hair Result" id="ecm-hair">
+  <input type="text" name="ECM Scan Scalp Result" id="ecm-scalp">
+  <input type="text" name="Semi Permanent Smoothening" id="semi-perm">
+  <input type="text" name="Concern" id="concern">
+  <input type="text" name="Hair Like" id="hairLike">
+  <input type="text" name="Scalp Like" id="scalpLike">
+  <input type="text" name="Hair Dislike" id="hairDislike">
+  <input type="text" name="Scalp Dislike" id="scalpDislike">
+  <input type="text" name="Homecare Products" id="homeProds">
+  <input type="text" name="Heatstyle" id="heatStyle">
+  <input type="text" name="Heatstyle Frequency" id="heatStyleFreq">
+  <input type="text" name="Chemical Treatments" id="chemTreat">
+  <input type="text" name="Chemical Treatments Names" id="chemTreatName">
+  <input type="text" name="First Hair Spa" id="firstSpa">
+  <input type="text" name="Last Hair Wash" id="lastWash">
+  <input type="text" name="Hair Wash Frequency" id="washFreq">
+
+  
+  <button type="submit" id="send">Send</button>
+</form>
     <!-- <div class="prev hide"> <i class="arrow left"></i> </div>
     <div class="next"> <i class="arrow right"></i> </div> -->
     <script src="./script.js"></script>
