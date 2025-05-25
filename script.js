@@ -315,13 +315,13 @@ for(let i =0;i<prodsArr.length;i++){
     // scalpServ.textContent = 'Reborn';
     hairServ.textContent = 'Reborn';
     document.querySelector('.servImg').src='./assets/images/compressed/sp-serv.png'
-    servPrice.innerHTML = 'Rs.1950/-<sup>*</sup> onwards <sub> *All service prices are exclusive of Tax</sub>';
+    servPrice.innerHTML = 'Rs.1950/-<sup>*</sup> onwards<br> <sub> *All service prices are exclusive of Tax</sub>';
     
   }
  else if(scalpCon.length>=1){
     hairServ.textContent='Reborn';
     document.querySelector('.servImg').src='./assets/images/compressed/sp-serv.png'
-    servPrice.innerHTML = 'Rs.1950/-<sup>*</sup> onwards <sub> *All service prices are exclusive of Tax</sub>';
+    servPrice.innerHTML = 'Rs.1950/-<sup>*</sup> onwards <br><sub> *All service prices are exclusive of Tax</sub>';
     if(gender === 'Female'){
         if(scalpCon.includes('Dandruff')|| scalpCon.includes('Oily')){
             // prodsRec.textContent = 'Purify';
@@ -338,7 +338,7 @@ for(let i =0;i<prodsArr.length;i++){
   else if(hairCon.includes('Fine/ Lack of volume') || hairCon.includes('Frizzy/ Unmanageable')){
     hairServ.textContent = 'Reborn';
     document.querySelector('.servImg').src='./assets/images/compressed/sp-serv.png'
-    servPrice.innerHTML = 'Rs.1950/-<sup>*</sup> onwards <sub> *All service prices are exclusive of Tax</sub>';
+    servPrice.innerHTML = 'Rs.1950/-<sup>*</sup> onwards <br><sub> *All service prices are exclusive of Tax</sub>';
     if(gender === 'Female'){
         if(hairCon.includes('Fine/ Lack of volume')){
             // prodsRec.textContent = 'Volupt';
@@ -352,7 +352,7 @@ for(let i =0;i<prodsArr.length;i++){
   }
  else if(hairCon.includes('Environment Damage (Like sun bleach)') || hairCon.includes('Mechanical Damage (Ironing, tonging)') || hairCon.includes('Chemical Damaged Hair (Permanent Smoothening, Over bleached hair)')|| hairCon.includes('Breakage / Split Ends')){
     hairServ.textContent = 'Plex';
-    servPrice.innerHTML = 'Rs.2000/-<sup>*</sup> onwards <sub> *All service prices are exclusive of Tax</sub>';
+    servPrice.innerHTML = 'Rs.2000/-<sup>*</sup> onwards<br> <sub> *All service prices are exclusive of Tax</sub>';
     document.querySelector('.servImg').src='./assets/images/compressed/olapex-serv.png'
     if(gender === 'Female'){
         // prodsRec.textContent='SP REPAIR , Plex , 3tenx ULTIMATE REVITALIZE , SB PENETRAITT';
@@ -361,7 +361,7 @@ for(let i =0;i<prodsArr.length;i++){
   }
  else if(hairCon.includes('Colored Hair')){
     hairServ.textContent = 'Reborn/3tenx';
-    servPrice.innerHTML = 'Rs.1950 / Rs.2500<sup>*</sup> onwards <sub> *All service prices are exclusive of Tax</sub>';
+    servPrice.innerHTML = 'Rs.1950 / Rs.2500<sup>*</sup> onwards <br><sub> *All service prices are exclusive of Tax</sub>';
     document.querySelector('.servImg').src='./assets/images/compressed/3tenx-serv.png'
     if(gender === 'Female'){
         if(hairCon.includes('Colored Hair')){
@@ -372,7 +372,7 @@ for(let i =0;i<prodsArr.length;i++){
   }
   else if(hairCon.includes('Dull/ Lack of Shine')|| hairCon.includes('Dryness')){
     hairServ.textContent = '3tenx';
-    servPrice.innerHTML = 'Rs.2500/-<sup>*</sup> onwards <sub> *All service prices are exclusive of Tax</sub>';
+    servPrice.innerHTML = 'Rs.2500/-<sup>*</sup> onwards <br><sub> *All service prices are exclusive of Tax</sub>';
     document.querySelector('.servImg').src='./assets/images/compressed/3tenx-serv.png'
     if(gender == 'Female'){
         if(hairCon.includes('Dryness')){
@@ -614,3 +614,10 @@ document.querySelectorAll('#wash-freq input[type="radio"]').forEach(s=>{
         }
     })
 })
+if (window.performance) {
+     var navEntries = window.performance.getEntriesByType('navigation');
+     if (navEntries.length > 0 && navEntries[0].type === 'back_forward') {
+       
+          window.location.reload();
+     } 
+}
