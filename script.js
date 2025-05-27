@@ -260,11 +260,27 @@ prev.addEventListener('click',()=>{
     
 });
 
-
+function prodHold(){
+    const parentDiv = document.createElement('div');
+    parentDiv.classList.add('prod-holder');
+    const prodImg= document.createElement('img');
+    const prodTitle = document.createElement('h3');
+    prodTitle.classList.add('prod-name');
+    const prodPrice = document.createElement('p');
+    prodPrice.classList.add('prod-price');
+    
+        document.querySelector('.img-holder').appendChild(parentDiv);
+        parentDiv.appendChild(prodImg);
+        parentDiv.appendChild(prodImg);
+        parentDiv.appendChild(prodTitle);
+        parentDiv.appendChild(prodPrice);
+    
+}
 
 function renderImages(){
     for(let i =0;i<prodsImagesArr.length;i++){
         prodsImages[i].src=prodsImagesArr[i];
+        document.querySelectorAll('.prod-holder')[i].classList.add('active');
     }
 }
 

@@ -218,6 +218,13 @@ input::placeholder{
   flex-direction: column;
   justify-content: space-between;
   gap:20px;
+  display: none;
+ }
+ .prod-holder.active{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap:20px;
  }
  .prod-name{
   color:#231F20;
