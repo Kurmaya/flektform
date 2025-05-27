@@ -313,7 +313,8 @@ for(let i =0;i<prodsArr.length;i++){
     prev.classList.add('hide');
     next.classList.add('hide');
   report.classList.add('hide');
-  if(hairCon.length >= 1 && scalpCon.length >= 1){
+  
+  if((hairCon.length >= 1 && scalpCon.length >= 1) || (hairCon.length > 1))  {
     // scalpServ.textContent = 'Reborn';
     hairServ.textContent = 'Reborn';
     document.querySelector('.servImg').src='./assets/images/compressed/sp-serv.png'
@@ -546,7 +547,7 @@ sLike.forEach(s=>{
             slike.push(s.value);
         }
         document.getElementById('scalpLike').textContent= slike.join(", ");
-        document.getElementById('scalpLike').textContent= value.join(", ");
+        document.getElementById('scalpLike').value= slike.join(", ");
     })
     
 })
