@@ -111,6 +111,7 @@ hair.forEach(h=>{
         else if(h.checked){
             hairCon.push(h.value);
             document.getElementById('hairDislike').textContent= hairCon.join(", ");
+            document.getElementById('hairDislike').value= hairCon.join(", ");
             if(h.value.includes('Environment Damage (Like sun bleach)'|| 'Mechanical Damage (Ironing, tonging)' || 'Chemical Damaged Hair (Permanent Smoothening, Over bleached hair)'|| 'Breakage / Split Ends') ){
                 // hairProds = hairProds += ' ' + 'SP REPAIR , 3tenx ULTIMATE REVITALIZE , SB PENETRAITT ';
                 // hairProds +=  h.attributes[5].value;
@@ -179,6 +180,7 @@ scalp.forEach(s=>{
         else if(s.checked){
             scalpCon.push(s.value);
             document.getElementById('scalpDislike').textContent= scalpCon.join(", ");
+            document.getElementById('scalpDislike').value= scalpCon.join(", ");
             scalpProds += s.attributes[5].value;
             prodsArr.push(s.attributes[6].value);
             JSON.parse(s.attributes[6].value).forEach(v=>{
@@ -273,7 +275,7 @@ function renderNames(){
 }
 function renderPrices(){
     for(let i =0;i<prodsNameArr.length;i++){
-        prodsPrice[i].textContent=prodsPriceArr[i];
+        prodsPrice[i].innerHTML=prodsPriceArr[i]+'<sup>#</sup>';
     }
     
 }
