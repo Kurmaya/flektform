@@ -30,6 +30,7 @@ let hairProds = '', scalpProds= '';
 let prodsImagesArr= [];
 let prodsNameArr = [];
 let prodsPriceArr = [];
+let useArr = [];
 
 
 
@@ -141,6 +142,7 @@ hair.forEach(h=>{
                     if(!prodsImagesArr.includes(at)){
                         
                         prodsImagesArr.push(at);
+                        
                     }
                     // console.log(b);
                     
@@ -161,6 +163,9 @@ hair.forEach(h=>{
                     // console.log(b);
                     
                 })
+               JSON.parse(h.attributes[9].value).forEach(at=>{
+                useArr.push(at);
+               })
                 console.log(prodsImagesArr);
             }
             console.log(hairProds);
@@ -197,6 +202,9 @@ scalp.forEach(s=>{
                 
                     prodsPriceArr.push(v);
                 
+            })
+            JSON.parse(s.attributes[9].value).forEach(v=>{
+                useArr.push(v);
             })
         }
         console.log(scalpProds);
@@ -295,6 +303,11 @@ function renderPrices(){
     }
     
 }
+function renderUse(){
+    for(let i=0;i<useArr.length;i++){
+        document.querySelectorAll('.prodUse')[i].textContent=useArr[i];
+    }
+}
 //semi flow gen 
 semiSubmit.addEventListener('click',()=>{
     holders.forEach(h=>{
@@ -316,6 +329,7 @@ else{
   renderImages();
   renderNames();
   renderPrices();
+  renderUse();
 })
 // report gen 2
 report.addEventListener('click',()=>{
@@ -408,6 +422,7 @@ for(let i =0;i<prodsArr.length;i++){
   renderImages();
   renderNames();
   renderPrices();
+  renderUse();
   })
 
 const quest = document.querySelectorAll('.question');

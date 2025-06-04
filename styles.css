@@ -187,7 +187,7 @@ align-items: center;
     /* width: 200px; */
     max-width: 200px;
     /* height: 250px; */
-    max-height: 250px;
+    max-height: 220px;
 }
 
 input[type="checkbox"],input[type="checkbox"]{
@@ -223,8 +223,8 @@ input::placeholder{
  .prod-holder.active{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap:20px;
+  justify-content: space-around;
+  /* gap:30px; */
  }
  .prod-name{
   color:#231F20;
