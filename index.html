@@ -20,7 +20,7 @@
                 <div class="dropdown">
     <h2>Choose Branch:</h2>
     <div class="options" data-check="true">
-<select name="Branch">
+<select name="Branch" class="brnch">
     <option value="Assay Road">Assay Road</option>
     <option value="HRBR">HRBR</option>
     <option value="HSR">HSR</option>
@@ -41,12 +41,22 @@
     </div>
    </div>
               <div class="question">
-                <h2>Your Name</h2>
+                <h2>Stylist's Name</h2>
                 <div class="options">
 
                 
                 
-                <input name="name" type="text" required placeholder="Name" id="yourname">
+                <input name="Stylist's Name" type="text" required placeholder="Name" id="stylistname">
+            
+                </div>
+            </div>
+            <div class="question">
+                <h2>Client's Name</h2>
+                <div class="options">
+
+                
+                
+                <input name="Client's Name" type="text" required placeholder="Name" id="yourname">
             
                 </div>
             </div>
@@ -54,7 +64,7 @@
        <div class="question">
            <h2>Contact Number</h2>
          <div class="options" >
-            <input type="tel" name="contact" required placeholder="Contact number" id="phNum">
+            <input type="number" name="contact" required placeholder="Contact number" id="phNum">
         </div>
        </div>
             <!-- gender -->
@@ -280,7 +290,17 @@
                     </label>
                     <div class="hold hide">
                         <h2>How frequently do you heatstyle your hair?</h2>
-                        <input type="text" name="How frequently do you heatstyle your hair?" id="hairFreqText">
+                        <div class="dropdown">
+    <!-- <h2>Choose Branch:</h2> -->
+    <div class="options" data-check="">
+<select class="hFrq" name="Heatstyle Frequency">
+    <option value="Once a Week">Once a Week</option>
+    <option value="Twice a Week">Twice a Week</option>
+    <option value="More than Twice a Week">More than Twice a Week</option>
+  </select>
+    </div>
+  
+    </div>
                     </div>
                     
                     
@@ -890,11 +910,12 @@
     </div>
     <form 
   method="POST" 
-  action="https://script.google.com/macros/s/AKfycbzXMyuWELfe3ZSh8EwgcJ4SGWWQvyGBjBMzx7jTAdClTvUVqruXFRM8IUaCwxNWix2e/exec"
+  action="https://script.google.com/macros/s/AKfycbzpixoLJ3sm6cJYWX1TTVawrntNvs6Ur0XdkDw3Y4IQBJ5QX19eAsKOsOCZULdLW4D2/exec"
 >
 <input type="text" name="Branch" id="branch">
 <input name="Contact Number" type="tel" placeholder="phone number" id="contactNumber">
-<input name="Name" type="text" placeholder="Name" id="name">
+<input name="Client's Name" type="text" placeholder="Name" id="clientname">
+<input name="Stylist's Name" type="text" placeholder="Name" id="stylistSname">
   <input type="text" name="Gender" id="gender">
   <input type="text" name="ECM Scan Hair Result" id="ecm-hair">
   <input type="text" name="ECM Scan Scalp Result" id="ecm-scalp">

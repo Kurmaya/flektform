@@ -507,18 +507,29 @@ chemStyle.addEventListener('change',()=>{
 
 //html data to form push
 
-document.querySelector('select').addEventListener('change',()=>{
-    document.getElementById('branch').value= document.querySelector('select').value;
+document.querySelector('.brnch').addEventListener('change',()=>{
+    document.getElementById('branch').value= document.querySelector('.brnch').value;
 })
-let nameArr ,phoneArr,ecmHair=[],ecmScalp=[],hcare;
+
+document.querySelector('.hFrq').addEventListener('change',()=>{
+    document.getElementById('heatStyleFreq').value= document.querySelector('.hFrq').value;
+})
+let nameArr,snameArr ,phoneArr,ecmHair=[],ecmScalp=[],hcare;
 
 // push name into nameArr
 document.getElementById('yourname').addEventListener('change',()=>{
 // nameArr.push(document.getElementById('yourname').value);
 nameArr = document.getElementById('yourname').value;
-document.getElementById('name').value=nameArr;
-document.getElementById('name').textContent=nameArr;
-console.log(document.getElementById('name').textContent);
+document.getElementById('clientname').value=nameArr;
+document.getElementById('clientname').textContent=nameArr;
+console.log(document.getElementById('yourname').textContent);
+});
+document.getElementById('stylistname').addEventListener('change',()=>{
+// nameArr.push(document.getElementById('yourname').value);
+snameArr = document.getElementById('stylistname').value;
+document.getElementById('stylistSname').value=snameArr;
+document.getElementById('stylistSname').textContent=snameArr;
+console.log(document.getElementById('stylistname').textContent);
 });
 // push phone numberinto phoneArr
 document.getElementById('phNum').addEventListener('change',()=>{
@@ -595,10 +606,10 @@ heat.forEach(h=>{
     })
 })
 
-document.getElementById('hairFreqText').addEventListener('change',()=>{
-    document.getElementById('heatStyleFreq').textContent=document.getElementById('hairFreqText').value;
-    document.getElementById('heatStyleFreq').value=document.getElementById('hairFreqText').value;
-})
+// document.getElementById('hairFreqText').addEventListener('change',()=>{
+//     document.getElementById('heatStyleFreq').textContent=document.getElementById('hairFreqText').value;
+//     document.getElementById('heatStyleFreq').value=document.getElementById('hairFreqText').value;
+// })
 
 
 //chem push
