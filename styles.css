@@ -241,6 +241,9 @@ input::placeholder{
   display: none;
   transition: .2s ease;
  }
+ .done{
+  margin:50px auto;
+ }
  .prodPrice{
   margin:10px auto;
  }
