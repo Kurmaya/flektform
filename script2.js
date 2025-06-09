@@ -335,7 +335,7 @@ function renderSensitive(){
      document.querySelectorAll('.sensitive .prod-holder')[i].classList.add('active');
 document.querySelectorAll('.sensitive .prod-name')[i].textContent= pN[i];
 document.querySelectorAll('.sensitive img')[i].src= pImg[i];
-document.querySelectorAll('.hairfall .prod-price')[i].innerHTML= pPrice[i]+'<sup>#</sup>';
+document.querySelectorAll('.sensitve .prod-price')[i].innerHTML= pPrice[i]+'<sup>#</sup>';
  } 
 }
 

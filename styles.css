@@ -185,10 +185,12 @@ align-items: center;
       gap: 10px 20px;
       width: 100%;
       /* height: 450px; */
-      padding: .5rem .5rem 1rem .5rem;
-      border:5px solid #ffffffec;
+      padding: 1rem .5rem ;
+      border:4px solid #ffffffec;
       border-radius: 10px;
       background:#ffffffab;
+      scrollbar-color: #ffffffec #B81E41;
+      box-shadow: 5px 3px 1rem black;
 }
 .img-holder img{
     /* width: 200px; */
@@ -197,6 +199,7 @@ align-items: center;
     max-height: 200px;
     object-fit: cover;
     border-radius: 10px;
+    filter:drop-shadow(1px 1px .5rem 1rem black);
 }
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -244,7 +247,7 @@ input::placeholder{
  .done{
   margin:50px auto;
  }
- .prodPrice{
+ .prodprice{
   margin:10px auto;
  }
  .prod-price{
