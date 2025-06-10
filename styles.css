@@ -273,3 +273,6 @@ input::placeholder{
   display: flex;
   flex-direction: column;
 }
+.plex h2{
+  margin:20px auto;
+}

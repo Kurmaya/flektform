@@ -335,7 +335,7 @@ function renderSensitive(){
      document.querySelectorAll('.sensitive .prod-holder')[i].classList.add('active');
 document.querySelectorAll('.sensitive .prod-name')[i].textContent= pN[i];
 document.querySelectorAll('.sensitive img')[i].src= pImg[i];
-document.querySelectorAll('.sensitve .prod-price')[i].innerHTML= pPrice[i]+'<sup>#</sup>';
+document.querySelectorAll('.sensitive .prod-price')[i].innerHTML= pPrice[i]+'<sup>#</sup>';
  } 
 }
 
@@ -673,7 +673,17 @@ const quest = document.querySelectorAll('.question');
 quest.forEach(q=>{
     q.querySelectorAll('input').forEach(i=>{
       i.addEventListener('change',()=>{
-        q.setAttribute('data-check','true');
+        if(i.id==='phNum'){
+            if(i.value.length>9){
+                q.setAttribute('data-check',true)
+            }
+            else if(i.value.length<10){
+                q.setAttribute('data-check',false)
+        }
+        }else{
+
+            q.setAttribute('data-check','true');
+        }
       })
     })
 })
