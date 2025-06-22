@@ -34,7 +34,14 @@ document.querySelectorAll('.prod-holder').forEach(p=>{
     })
 })
 
-
+window.addEventListener('DOMContentLoaded',()=>{
+    document.querySelectorAll('.prod-holder').forEach(p=>{
+        const tick = document.createElement('div');
+        tick.classList.add('tick');
+        tick.innerHTML = '✔';
+        p.appendChild(tick);
+    })
+})
 done.addEventListener('click',()=>{
     document.querySelector('#send').click();
 
@@ -454,46 +461,6 @@ scalp.forEach(s=>{
         }
     })
 })
-// scalp.forEach(s=>{
-//     s.addEventListener('change',()=>{
-//         if(!s.checked  && scalpCon.includes(s.value)){
-            
-//             var newArray = scalpCon.filter(n=> n != s.value)
-//             scalpCon= [];
-//             scalpCon=[...newArray];
-            
-//         }
-//         else if(s.checked){
-//             scalpCon.push(s.value);
-//             document.getElementById('scalpDislike').textContent= scalpCon.join(", ");
-//             document.getElementById('scalpDislike').value= scalpCon.join(", ");
-//             scalpProds += s.attributes[5].value;
-//             prodsArr.push(s.attributes[6].value);
-//             JSON.parse(s.attributes[6].value).forEach(v=>{
-//                 if(!prodsImagesArr.includes(v)){
-//                     prodsImagesArr.push(v);
-//                 }
-//             })
-//             JSON.parse(s.attributes[8].value).forEach(v=>{
-//                 if(!prodsNameArr.includes(v)){
-//                     prodsNameArr.push(v);
-//                 }
-//             })
-//              JSON.parse(s.attributes[7].value).forEach(v=>{
-                
-//                     prodsPriceArr.push(v);
-                
-//             })
-//             JSON.parse(s.attributes[9].value).forEach(v=>{
-//                 useArr.push(v);
-//             })
-//         }
-//         console.log(scalpProds);
-        
-//     })
-// })
-
-
 
 //previous and next button handling
 let qCount = 0;
