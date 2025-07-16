@@ -526,6 +526,7 @@ semiSubmit.addEventListener('click',()=>{
     prodsImages[i].src= prodsArr[i];
 }
 if(scalpCon.includes('Hair Fall')||scalpCon.includes('Dandruff')){
+    
     document.querySelector('.servImg').src='./assets/images/compressed/sp-serv.png';
 }
 else{
@@ -535,6 +536,8 @@ else{
     prev.classList.add('hide');
     next.classList.add('hide');
   report.classList.add('hide');
+  hairServ.textContent='Reborn/3Tenx';
+  document.getElementById('Service').value=hairServ.value;
 //   renderImages();
 //   renderNames();
 //   renderPrices();
@@ -556,12 +559,14 @@ report.addEventListener('click',()=>{
   if((hairCon.length >= 1 && scalpCon.length >= 1) || (hairCon.length > 1))  {
     // scalpServ.textContent = 'Reborn';
     hairServ.textContent = 'Reborn';
+    document.getElementById('service').value= hairServ.value;
     document.querySelector('.servImg').src='./assets/images/compressed/sp-serv.png'
     servPrice.innerHTML = 'Rs.1950/-<sup>*</sup> onwards<br> <sub> *All service prices are exclusive of Tax</sub>';
     
   }
  else if(scalpCon.length>=1){
     hairServ.textContent='Reborn';
+    document.getElementById('service').value= hairServ.value;
     document.querySelector('.servImg').src='./assets/images/compressed/sp-serv.png'
     servPrice.innerHTML = 'Rs.1950/-<sup>*</sup> onwards <br><sub> *All service prices are exclusive of Tax</sub>';
     if(gender === 'Female'){
@@ -579,6 +584,7 @@ report.addEventListener('click',()=>{
   }
   else if(hairCon.includes('Fine/ Lack of volume') || hairCon.includes('Frizzy/ Unmanageable')){
     hairServ.textContent = 'Reborn';
+    document.getElementById('service').value= hairServ.value;
     document.querySelector('.servImg').src='./assets/images/compressed/sp-serv.png'
     servPrice.innerHTML = 'Rs.1950/-<sup>*</sup> onwards <br><sub> *All service prices are exclusive of Tax</sub>';
     if(gender === 'Female'){
@@ -594,6 +600,7 @@ report.addEventListener('click',()=>{
   }
  else if(hairCon.includes('Environment Damage (Like sun bleach)') || hairCon.includes('Mechanical Damage (Ironing, tonging)') || hairCon.includes('Chemical Damaged Hair (Permanent Smoothening, Over bleached hair)')|| hairCon.includes('Breakage / Split Ends')){
     hairServ.textContent = 'Plex';
+    document.getElementById('service').value= hairServ.value;
     servPrice.innerHTML = 'Rs.2000/-<sup>*</sup> onwards<br> <sub> *All service prices are exclusive of Tax</sub>';
     document.querySelector('.servImg').src='./assets/images/compressed/olapex-serv.png'
     if(gender === 'Female'){
@@ -603,6 +610,7 @@ report.addEventListener('click',()=>{
   }
  else if(hairCon.includes('Colored Hair')){
     hairServ.textContent = 'Reborn/3tenx';
+    document.getElementById('service').value= hairServ.value;
     servPrice.innerHTML = 'Rs.1950 / Rs.2500<sup>*</sup> onwards <br><sub> *All service prices are exclusive of Tax</sub>';
     document.querySelector('.servImg').src='./assets/images/compressed/3tenx-serv.png'
     if(gender === 'Female'){
@@ -614,6 +622,7 @@ report.addEventListener('click',()=>{
   }
   else if(hairCon.includes('Dull/ Lack of Shine')|| hairCon.includes('Dryness')){
     hairServ.textContent = '3tenx';
+    document.getElementById('service').value= hairServ.value;
     servPrice.innerHTML = 'Rs.2500/-<sup>*</sup> onwards <br><sub> *All service prices are exclusive of Tax</sub>';
     document.querySelector('.servImg').src='./assets/images/compressed/3tenx-serv.png'
     if(gender == 'Female'){
@@ -637,7 +646,25 @@ report.addEventListener('click',()=>{
   
 
 const quest = document.querySelectorAll('.question');
-quest.forEach(q=>{
+quest[0].querySelector('select').addEventListener('change',()=>{
+    quest[0].setAttribute('data-check',true);
+})
+quest.forEach((q,i)=>{
+//    q.addEventListener('change',()=>{
+//     if(q.querySelector('#id')==='phNum'){
+//             if(q.querySelector('#id').value.length>9){
+//                 q.setAttribute('data-check',true)
+//             }
+//             else if(q.querySelector('#id').value.length<10){
+//                 q.setAttribute('data-check',false)
+//         }
+//         }
+//         else{
+
+//             q.setAttribute('data-check','true');
+//         }
+//    })
+ 
     q.querySelectorAll('input').forEach(i=>{
       i.addEventListener('change',()=>{
         if(i.id==='phNum'){

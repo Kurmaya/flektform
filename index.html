@@ -16,11 +16,12 @@
     <div id="wrapper">
     
         <div class="question-holder holder-1" data-check="">
-   <div class="question" data-check="true">
+   <div class="question" data-check="">
                 <div class="dropdown">
     <h2>Choose Branch:</h2>
-    <div class="options" data-check="true">
+    <div class="options" data-check="">
 <select name="Branch" class="brnch">
+     <option value="" disabled selected>Select your option</option>
     <option value="Assay Road">Assay Road</option>
     <option value="HRBR">HRBR</option>
     <option value="HSR">HSR</option>
@@ -592,13 +593,14 @@
         </div>
         <div class="result">
             <!-- <h2>Report</h2> -->
-            
+          
             <div class="service">
                 <h2>Service Recommendation: <h3 class="hairRec"></h3></h2>
                 <img src="" alt="" class="servImg">
                 <span class="servPrice"></span>
                 <!-- <span >Scalp Reccomendation: <h3 class="scalpRec"></h3></span> -->
             </div>
+            <h3>Please Select a Product to Purchase</h3>
             <div class="products hide">
                 <h2>Product Recommendation </h2>
                 <!-- <span><h3 class="hairProd"></h3></span> -->
@@ -2420,14 +2422,14 @@
             </div>
             
             
-                            <button class="done">Home</button>
+                            <button class="done hide">Home</button>
         </div>
         <button class="report hide">Submit</button>
        
     </div>
     <form 
   method="POST" 
-  action="https://script.google.com/macros/s/AKfycbximkdUy3xqW9DweOx_3uuiRQS2loCvMK4OLq8cw_R3oAEwBliHF1a5Z2xrDoCr3Gog/exec"
+  action="https://script.google.com/macros/s/AKfycbx27whQIi4huUeFx5XqwWD-zplK9_QHKM3iBf7lAu6owjQaP-QuqBYYLBGfbkbvrckm/exec"
 >
 <input type="text" name="Branch" id="branch">
 <input name="Contact Number" type="tel" placeholder="phone number" id="contactNumber">
@@ -2451,6 +2453,7 @@
   <input type="text" name="Last Hair Wash" id="lastWash">
   <input type="text" name="Hair Wash Frequency" id="washFreq">
   <input type="text" name="Purchase" id="purchase">
+  <input type="text" name="Service" id="service">
 
   
   <button type="submit" id="send">Send</button>
