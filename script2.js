@@ -19,6 +19,7 @@ const semiSubmit = document.querySelector('.semi-flow');
 let purchaseArr=[];
 document.querySelectorAll('.prod-holder').forEach(p=>{
     p.addEventListener('click',()=>{
+        done.classList.remove('hide');
         let purchase = p.querySelector('.prod-name').textContent;
         p.classList.add('clicked');
         console.log(purchase);
@@ -525,6 +526,7 @@ semiSubmit.addEventListener('click',()=>{
     for(let i =0;i<prodsArr.length;i++){
     prodsImages[i].src= prodsArr[i];
 }
+hairServ.textContent='Reborn/3Tenx';
 if(scalpCon.includes('Hair Fall')||scalpCon.includes('Dandruff')){
     
     document.querySelector('.servImg').src='./assets/images/compressed/sp-serv.png';
@@ -536,8 +538,8 @@ else{
     prev.classList.add('hide');
     next.classList.add('hide');
   report.classList.add('hide');
-  hairServ.textContent='Reborn/3Tenx';
-  document.getElementById('Service').value=hairServ.value;
+  
+  document.getElementById('service').value=hairServ.textContent;
 //   renderImages();
 //   renderNames();
 //   renderPrices();
@@ -559,14 +561,14 @@ report.addEventListener('click',()=>{
   if((hairCon.length >= 1 && scalpCon.length >= 1) || (hairCon.length > 1))  {
     // scalpServ.textContent = 'Reborn';
     hairServ.textContent = 'Reborn';
-    document.getElementById('service').value= hairServ.value;
+    document.getElementById('service').value= hairServ.textContent;
     document.querySelector('.servImg').src='./assets/images/compressed/sp-serv.png'
     servPrice.innerHTML = 'Rs.1950/-<sup>*</sup> onwards<br> <sub> *All service prices are exclusive of Tax</sub>';
     
   }
  else if(scalpCon.length>=1){
     hairServ.textContent='Reborn';
-    document.getElementById('service').value= hairServ.value;
+    document.getElementById('service').value= hairServ.textContent;
     document.querySelector('.servImg').src='./assets/images/compressed/sp-serv.png'
     servPrice.innerHTML = 'Rs.1950/-<sup>*</sup> onwards <br><sub> *All service prices are exclusive of Tax</sub>';
     if(gender === 'Female'){
@@ -584,7 +586,7 @@ report.addEventListener('click',()=>{
   }
   else if(hairCon.includes('Fine/ Lack of volume') || hairCon.includes('Frizzy/ Unmanageable')){
     hairServ.textContent = 'Reborn';
-    document.getElementById('service').value= hairServ.value;
+    document.getElementById('service').value= hairServ.textContent;
     document.querySelector('.servImg').src='./assets/images/compressed/sp-serv.png'
     servPrice.innerHTML = 'Rs.1950/-<sup>*</sup> onwards <br><sub> *All service prices are exclusive of Tax</sub>';
     if(gender === 'Female'){
@@ -600,7 +602,7 @@ report.addEventListener('click',()=>{
   }
  else if(hairCon.includes('Environment Damage (Like sun bleach)') || hairCon.includes('Mechanical Damage (Ironing, tonging)') || hairCon.includes('Chemical Damaged Hair (Permanent Smoothening, Over bleached hair)')|| hairCon.includes('Breakage / Split Ends')){
     hairServ.textContent = 'Plex';
-    document.getElementById('service').value= hairServ.value;
+    document.getElementById('service').value= hairServ.textContent;
     servPrice.innerHTML = 'Rs.2000/-<sup>*</sup> onwards<br> <sub> *All service prices are exclusive of Tax</sub>';
     document.querySelector('.servImg').src='./assets/images/compressed/olapex-serv.png'
     if(gender === 'Female'){
@@ -610,7 +612,7 @@ report.addEventListener('click',()=>{
   }
  else if(hairCon.includes('Colored Hair')){
     hairServ.textContent = 'Reborn/3tenx';
-    document.getElementById('service').value= hairServ.value;
+    document.getElementById('service').value= hairServ.textContent;
     servPrice.innerHTML = 'Rs.1950 / Rs.2500<sup>*</sup> onwards <br><sub> *All service prices are exclusive of Tax</sub>';
     document.querySelector('.servImg').src='./assets/images/compressed/3tenx-serv.png'
     if(gender === 'Female'){
@@ -622,7 +624,7 @@ report.addEventListener('click',()=>{
   }
   else if(hairCon.includes('Dull/ Lack of Shine')|| hairCon.includes('Dryness')){
     hairServ.textContent = '3tenx';
-    document.getElementById('service').value= hairServ.value;
+    document.getElementById('service').value= hairServ.textContent;
     servPrice.innerHTML = 'Rs.2500/-<sup>*</sup> onwards <br><sub> *All service prices are exclusive of Tax</sub>';
     document.querySelector('.servImg').src='./assets/images/compressed/3tenx-serv.png'
     if(gender == 'Female'){
