@@ -764,7 +764,7 @@ document.querySelector('.brnch').addEventListener('change',()=>{
 document.querySelector('.hFrq').addEventListener('change',()=>{
     document.getElementById('heatStyleFreq').value= document.querySelector('.hFrq').value;
 })
-let nameArr,snameArr ,phoneArr,ecmHair=[],ecmScalp=[],hcare;
+let nameArr,employeeID,snameArr ,phoneArr,ecmHair=[],ecmScalp=[],hcare;
 
 // push name into nameArr
 document.getElementById('yourname').addEventListener('change',()=>{
@@ -781,6 +781,13 @@ document.getElementById('stylistSname').value=snameArr;
 document.getElementById('stylistSname').textContent=snameArr;
 console.log(document.getElementById('stylistname').textContent);
 });
+// push stylist employee id into employeeID
+document.getElementById('stylistSID').addEventListener('change',()=>{
+    employeeID = document.getElementById('stylistSID').value;
+    document.getElementById('stylistID').value=employeeID;
+    document.getElementById('stylistSID').textContent=employeeID;
+    console.log(document.getElementById('stylistSID').textContent);
+})
 // push phone numberinto phoneArr
 document.getElementById('phNum').addEventListener('change',()=>{
 phoneArr= document.getElementById('phNum').value;

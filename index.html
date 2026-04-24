@@ -23,9 +23,6 @@
 <select name="Branch" class="brnch">
      <option value="" disabled selected>Select your option</option>
     <option value="Assay Road">Assay Road</option>
-    <option value="Assay Road">Gurgaon DLF</option>
-    <option value="Assay Road">Chembur</option>
-    <option value="Assay Road">Dehradun</option>
     <option value="HRBR">HRBR</option>
     <option value="HSR">HSR</option>
     <option value="J P Nagar">J P Nagar</option>
@@ -51,6 +48,16 @@
                 
                 
                 <input name="Stylist's Name" type="text" required placeholder="Name" id="stylistname">
+            
+                </div>
+            </div>
+             <div class="question">
+                <h2>Stylist's Employee ID</h2>
+                <div class="options">
+
+                
+                
+                <input name="Stylist's Employee ID" type="text" required placeholder="Employee ID" id="stylistSID">
             
                 </div>
             </div>
@@ -2432,12 +2439,13 @@
     </div>
     <form 
   method="POST" 
-  action="https://script.google.com/macros/s/AKfycbx27whQIi4huUeFx5XqwWD-zplK9_QHKM3iBf7lAu6owjQaP-QuqBYYLBGfbkbvrckm/exec"
+  action="https://script.google.com/macros/s/AKfycbzj9wixjSt_FTanXHI9euZCJIQdPcQCKHWlmChn1XuGL5OsFxDbp1_RcSaavn6jt3Ok/exec"
 >
 <input type="text" name="Branch" id="branch">
 <input name="Contact Number" type="tel" placeholder="phone number" id="contactNumber">
 <input name="Client's Name" type="text" placeholder="Name" id="clientname">
 <input name="Stylist's Name" type="text" placeholder="Name" id="stylistSname">
+<input name="Stylist's Employee ID" type="text" placeholder="Name" id="stylistID">
   <input type="text" name="Gender" id="gender">
   <input type="text" name="ECM Scan Hair Result" id="ecm-hair">
   <input type="text" name="ECM Scan Scalp Result" id="ecm-scalp">
@@ -2465,5 +2473,4 @@
     <div class="next"> <i class="arrow right"></i> </div> -->
     <script src="./script2.js"></script>
 </body>
-
 </html>
