@@ -563,14 +563,14 @@ report.addEventListener('click',()=>{
     hairServ.textContent = 'Reborn';
     document.getElementById('service').value= hairServ.textContent;
     document.querySelector('.servImg').src='./assets/images/compressed/sp-serv.png'
-    servPrice.innerHTML = 'Rs.1950/-<sup>*</sup> onwards<br> <sub> *All service prices are exclusive of Tax</sub>';
+    servPrice.innerHTML = 'Rs.2250/-<sup>*</sup> onwards<br> <sub> *All service prices are exclusive of Tax</sub>';
     
   }
  else if(scalpCon.length>=1){
     hairServ.textContent='Reborn';
     document.getElementById('service').value= hairServ.textContent;
     document.querySelector('.servImg').src='./assets/images/compressed/sp-serv.png'
-    servPrice.innerHTML = 'Rs.1950/-<sup>*</sup> onwards <br><sub> *All service prices are exclusive of Tax</sub>';
+    servPrice.innerHTML = 'Rs.2250/-<sup>*</sup> onwards <br><sub> *All service prices are exclusive of Tax</sub>';
     if(gender === 'Female'){
         if(scalpCon.includes('Dandruff')|| scalpCon.includes('Oily')){
             // prodsRec.textContent = 'Purify';
@@ -588,7 +588,7 @@ report.addEventListener('click',()=>{
     hairServ.textContent = 'Reborn';
     document.getElementById('service').value= hairServ.textContent;
     document.querySelector('.servImg').src='./assets/images/compressed/sp-serv.png'
-    servPrice.innerHTML = 'Rs.1950/-<sup>*</sup> onwards <br><sub> *All service prices are exclusive of Tax</sub>';
+    servPrice.innerHTML = 'Rs.2250/-<sup>*</sup> onwards <br><sub> *All service prices are exclusive of Tax</sub>';
     if(gender === 'Female'){
         if(hairCon.includes('Fine/ Lack of volume')){
             // prodsRec.textContent = 'Volupt';
@@ -603,7 +603,7 @@ report.addEventListener('click',()=>{
  else if(hairCon.includes('Environment Damage (Like sun bleach)') || hairCon.includes('Mechanical Damage (Ironing, tonging)') || hairCon.includes('Chemical Damaged Hair (Permanent Smoothening, Over bleached hair)')|| hairCon.includes('Breakage / Split Ends')){
     hairServ.textContent = 'Plex';
     document.getElementById('service').value= hairServ.textContent;
-    servPrice.innerHTML = 'Rs.2000/-<sup>*</sup> onwards<br> <sub> *All service prices are exclusive of Tax</sub>';
+    servPrice.innerHTML = 'Rs.1600/-<sup>*</sup> onwards<br> <sub> *All service prices are exclusive of Tax</sub>';
     document.querySelector('.servImg').src='./assets/images/compressed/olapex-serv.png'
     if(gender === 'Female'){
         // prodsRec.textContent='SP REPAIR , Plex , 3tenx ULTIMATE REVITALIZE , SB PENETRAITT';
@@ -613,7 +613,7 @@ report.addEventListener('click',()=>{
  else if(hairCon.includes('Colored Hair')){
     hairServ.textContent = 'Reborn/3tenx';
     document.getElementById('service').value= hairServ.textContent;
-    servPrice.innerHTML = 'Rs.1950 / Rs.2500<sup>*</sup> onwards <br><sub> *All service prices are exclusive of Tax</sub>';
+    servPrice.innerHTML = 'Rs.2250 / Rs.2600<sup>*</sup> onwards <br><sub> *All service prices are exclusive of Tax</sub>';
     document.querySelector('.servImg').src='./assets/images/compressed/3tenx-serv.png'
     if(gender === 'Female'){
         if(hairCon.includes('Colored Hair')){
@@ -625,7 +625,7 @@ report.addEventListener('click',()=>{
   else if(hairCon.includes('Dull/ Lack of Shine')|| hairCon.includes('Dryness')){
     hairServ.textContent = '3tenx';
     document.getElementById('service').value= hairServ.textContent;
-    servPrice.innerHTML = 'Rs.2500/-<sup>*</sup> onwards <br><sub> *All service prices are exclusive of Tax</sub>';
+    servPrice.innerHTML = 'Rs.2600/-<sup>*</sup> onwards <br><sub> *All service prices are exclusive of Tax</sub>';
     document.querySelector('.servImg').src='./assets/images/compressed/3tenx-serv.png'
     if(gender == 'Female'){
         if(hairCon.includes('Dryness')){
