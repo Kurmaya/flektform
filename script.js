@@ -173,6 +173,7 @@ hair.forEach(h=>{
         
     })
 })
+
 scalp.forEach(s=>{
     s.addEventListener('change',()=>{
         if(!s.checked  && scalpCon.includes(s.value)){
@@ -268,22 +269,7 @@ prev.addEventListener('click',()=>{
     
 });
 
-function prodHold(){
-    const parentDiv = document.createElement('div');
-    parentDiv.classList.add('prod-holder');
-    const prodImg= document.createElement('img');
-    const prodTitle = document.createElement('h3');
-    prodTitle.classList.add('prod-name');
-    const prodPrice = document.createElement('p');
-    prodPrice.classList.add('prod-price');
-    
-        document.querySelector('.img-holder').appendChild(parentDiv);
-        parentDiv.appendChild(prodImg);
-        parentDiv.appendChild(prodImg);
-        parentDiv.appendChild(prodTitle);
-        parentDiv.appendChild(prodPrice);
-    
-}
+
 
 function renderImages(){
     for(let i =0;i<prodsImagesArr.length;i++){
@@ -423,6 +409,14 @@ for(let i =0;i<prodsArr.length;i++){
   renderNames();
   renderPrices();
   renderUse();
+  })
+
+  //report gen 3
+  report.addEventListener('click',()=>{
+    holders.forEach(h=>{
+        h.classList.add('hide');
+    });
+
   })
 
 const quest = document.querySelectorAll('.question');

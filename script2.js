@@ -44,6 +44,7 @@ window.addEventListener('DOMContentLoaded',()=>{
     })
 })
 done.addEventListener('click',()=>{
+    done.disabled = true;
     document.querySelector('#send').click();
 
 })
